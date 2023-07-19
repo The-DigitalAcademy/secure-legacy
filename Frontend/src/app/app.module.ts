@@ -12,6 +12,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RequestPasswordComponent } from './components/request-password/request-password.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ProfileComponent,
     CarouselComponent,
     RequestPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

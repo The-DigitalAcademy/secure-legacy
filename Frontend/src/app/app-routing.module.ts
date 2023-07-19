@@ -7,6 +7,7 @@ import { GetstartedComponent } from './components/getstarted/getstarted.componen
 import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },

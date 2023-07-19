@@ -1,17 +1,29 @@
 # Stage 1: Build the Angular app
-FROM node:14 as build-stage
-WORKDIR /app
-COPY package*.json /app/
-RUN npm install
-COPY ./ /app/
-RUN npm run build -- --output-path=./dist
+# FROM node:slim
+# WORKDIR /app
+# COPY package*.json /app/
+# RUN npm install
+# COPY ./ /app/
+# RUN npm run build -- --output-path=./dist
 
 # Stage 2: Serve the built app with the backend server
-FROM node:slim
+# FROM node:slim
+# WORKDIR /app
+# COPY --from=build-stage /app/dist/ /app/
+# COPY --from=build-stage /SecureLegacy/server.js /app/
+# COPY --from=build-stage /SecureLegacy/package*.json /app/
+# RUN npm ci --only=production
+# EXPOSE 3000
+# CMD node server.js
+
+
+FROM node:latest as node
 WORKDIR /app
-COPY --from=build-stage /app/dist/ /app/
-COPY --from=build-stage /SecureLegacy/server.js /app/
-COPY --from=build-stage /SecureLegacy/package*.json /app/
-RUN npm ci --only=production
-EXPOSE 3000
-CMD node server.js
+COPY . .
+RUN npm install
+RUN npm run build --prod
+CMD ng serve
+
+FROM nginx:alpine
+COPY --from=node /app/dist/frontend /usr/share/nginx/
+EXPOSE 80
