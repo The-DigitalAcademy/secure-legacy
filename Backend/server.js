@@ -1,40 +1,51 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const authRoutes = require('./app/routes/authRoutes');
-const sequelize = require('./app/Utils/database');
+// const express = require('express');
+// const dotenv = require('dotenv');
+// const userRoutes = require('./app/routes/userRoutes');
+// const authRoutes = require('./app/routes/authRoutes');
+// const sequelize = require('./app/Utils/database');
 
 // const app = express()
 // const port = 3000
 
-dotenv.config();
+// app.get('/', (req, res) => {
+//   res.json({'Project Name:': 'Secure Legacy'})
+// })
+
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const { authRouter } = require('./app/Routes/authRoutes');
+const sequelize = require('./app/Utils/database');
 
 const app = express();
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
-  next();
-});
 
-//testing
+app.use(bodyParser.json());
+app.use(cors());
+
+// Routes
+app.use('/auth', authRouter);
+
+
 app.get('/', (req, res) => {
-    res.json({'Project Name:': 'Secure Legacy'})
-  })
+  res.json({'Project Name:': 'Secure Legacy'})
+})
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3030;
 
-app.use(express.json());
-
-app.use('/api/auth', authRoutes);
-
-
-app.use((req, res) => {
-  res.status(404).json({ message: 'Route not found.' });
-});
-
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-});
+(async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Connection to the database has been established successfully.');
+    await sequelize.sync(); // Creates tables if they don't exist
+    console.log('All models were synchronized successfully.');
+    app.listen(PORT, () => {
+      console.log(`Server is running on http://localhost:${PORT}`);
+    });
+  } catch (err) {
+    console.error('Unable to connect to the database:', err);
+  }
+})();

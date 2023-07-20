@@ -1,27 +1,30 @@
-// src/utils/auth.js
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
 
-function generateToken(user) {
-  return jwt.sign(
-    { id: user.id, email: user.email },
-    process.env.JWT_SECRET,
-    { expiresIn: '1h' }
-  );
-}
+const saltRounds = 10;
+const secretKey = 'your-secret-key';
 
-async function hashPassword(password) {
-  const salt = await bcrypt.genSalt(10);
+const generateHash = async (password) => {
+  const salt = await bcrypt.genSalt(saltRounds);
   return bcrypt.hash(password, salt);
-}
+};
 
-async function comparePasswords(password, hashedPassword) {
-  return bcrypt.compare(password, hashedPassword);
-}
+const compareHash = async (password, hash) => {
+  return bcrypt.compare(password, hash);
+};
+
+const generateJWT = (user) => {
+  const payload = { id: user.id, email: user.email };
+  return jwt.sign(payload, secretKey, { expiresIn: '1h' });
+};
+
+const verifyJWT = (token) => {
+  return jwt.verify(token, secretKey);
+};
 
 module.exports = {
-  generateToken,
-  hashPassword,
-  comparePasswords,
+  generateHash,
+  compareHash,
+  generateJWT,
+  verifyJWT,
 };

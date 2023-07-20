@@ -1,25 +1,19 @@
-// src/routes/authRoutes.js
 const express = require('express');
-const authController = require('../Controllers/authController');
-//const purchaseController = require('../controllers/purchaseController');
+const { registerUser, loginUser } = require('../Controllers/authController');
+const { getAllUsers } = require('../Controllers/authController');
+const { authenticateJWT } = require('../Middleware/authMiddleware');
 
-const router = express.Router();
+const authRouter = express.Router();
+const userRouter = express.Router();
 
-router.use(function(req, res, next) {
-  res.header(
-    "Access-Control-Allow-Headers",
-    "x-access-token, Origin, Content-Type, Accept"
-  );
-  next();
-});
+// Auth routes
+authRouter.post('/register', registerUser);
+authRouter.post('/login', loginUser);
 
-router.get('/users', authController.getUsers);
-router.post('/register', authController.register);
-router.post('/login', authController.login);
-router.put('/users/:id', authController.updateUser);
-router.delete('/users/:id', authController.deleteUser);
+// User routes (Example: get all users)
+authRouter.get('/', getAllUsers);
 
-// Add purchase route
-//router.post('/purchase', purchaseController.purchaseProduct);
-
-module.exports = router;
+module.exports = {
+  authRouter,
+  userRouter,
+};
