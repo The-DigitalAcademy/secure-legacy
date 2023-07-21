@@ -15,25 +15,37 @@
 
 // module.exports = sequelize;
 
+
+//number 2
+// const { Sequelize } = require('sequelize');
+// require('dotenv').config();
+
+// const sequelize = new Sequelize(process.env.DB_CONNECTION_STRING, {
+//   dialect: 'postgres',
+//   dialectOptions: {
+//     ssl: true, // Enable SSL/TLS
+//   },
+//   logging: false,
+// });
+
+// (async () => {
+//   try {
+//     await sequelize.authenticate();
+//     console.log('Database connection has been established successfully.');
+//   } catch (error) {
+//     console.error('Unable to connect to the database:', error);
+//   }
+// })();
+
+// module.exports = sequelize;
+
+
 const { Sequelize } = require('sequelize');
-require('dotenv').config();
 
-const sequelize = new Sequelize(process.env.DB_CONNECTION_STRING, {
+const sequelize = new Sequelize('api', 'postgres', 'Letsdoit!', {
+  host: 'localhost',
   dialect: 'postgres',
-  dialectOptions: {
-    ssl: true, // Enable SSL/TLS
-  },
-  logging: false,
 });
-
-(async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Database connection has been established successfully.');
-  } catch (error) {
-    console.error('Unable to connect to the database:', error);
-  }
-})();
 
 module.exports = sequelize;
 
