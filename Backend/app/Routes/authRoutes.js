@@ -1,6 +1,6 @@
 const express = require('express');
 const { registerUser, loginUser } = require('../Controllers/authController');
-const { getAllUsers } = require('../Controllers/authController');
+const { getAllUsers, getOneUser} = require('../Controllers/authController');
 const { authenticateJWT } = require('../Middleware/authMiddleware');
 
 const authRouter = express.Router();
@@ -12,6 +12,7 @@ authRouter.post('/login', loginUser);
 
 // User routes (Example: get all users)
 authRouter.get('/', getAllUsers);
+authRouter.get('/:id', getOneUser);
 
 module.exports = {
   authRouter,
