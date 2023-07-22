@@ -11,9 +11,8 @@ const AUTH_API = 'http://localhost:3000/';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class UserauthService {
 
-  private isAuthenticated: boolean = false;
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string): Observable<any> {
@@ -37,6 +36,7 @@ export class AuthService {
     }, httpOptions);
   }
 
+
   getUsers(): Observable<any> {
     return this.http.get(AUTH_API + 'auth', { responseType: 'json' });
   }
@@ -58,4 +58,5 @@ export class AuthService {
     localStorage.removeItem('accessToken');
     window.location.replace("/landing") // Redirect to login page after logout
   }
+
 }
