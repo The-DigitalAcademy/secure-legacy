@@ -1,5 +1,7 @@
 <section class="bg-gray-50" id="device-bg">
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div class="circle circle-top-right"></div>
+        <div class="circle circle-bottom-left"></div>
         <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white dark:border-white" id="frm-cont">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 
@@ -10,12 +12,14 @@
                 #f="ngForm"
                 novalidate
                >
-                    <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                    <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white" id="logo">
                         <img class="w-40 h-18 mr-2" src="https://cdn.discordapp.com/attachments/1118162261240971309/1131896160475426836/image.png" alt="logo">
                     </a>
+                    <div class="welcome">
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
                         please fill in your information
                     </h1>
+                </div>
                     <div class="flex items-start justify-between" id="namesfrm" >
                        <div>
     <input type="text" name="firstName"  id="firstname" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="First Name" 
@@ -33,7 +37,7 @@
     [(ngModel)]="form.lastName"
     #lastnameName="ngModel"
     #lastName="ngModel">
-    >
+    
     <div class="alert alert-danger" role="alert" *ngIf="lastName.errors && f.submitted" >
         Last Name is required
     </div>
@@ -60,7 +64,7 @@
                               Password must be at least 8 characters
                             </div>
                         </div>
-                        <div *ngIf="password.errors?.['pattern']">
+                        <div class="alert" *ngIf="password.errors?.['pattern']">
                             Password must contain both letters and numbers
                           </div>
                     </div>

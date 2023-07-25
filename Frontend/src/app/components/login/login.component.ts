@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         this.reloadPage();
         //this.toastr.success("Login Successful")
         
-       window.location.replace("/home")
+       window.location.replace("/dashboard")
       //return this.isLoggedIn = true
       
         

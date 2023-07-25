@@ -1,24 +1,29 @@
-.circle{
-    border-radius: 500px;
-background: rgba(255, 92, 83, 0.34);
-width: 200px;
-height: 200px;
-flex-shrink: 0;
-position: relative;
-top: -25rem;
-display: flex;
-margin-bottom: 0%;
+// .circle{
+//     border-radius: 500px;
+// background: rgba(255, 92, 83, 0.34);
+// width: 200px;
+// height: 200px;
+// flex-shrink: 0;
+// position: relative;
+// top: -25rem;
+// display: flex;
+// margin-bottom: 0%;
 
+// }
+
+// .circle h1{
+//     color: rgba(255, 92, 83, 0.34);
+//     margin-bottom: 0%;
+// }
+.container{
+  margin-top: -3rem;
+  bottom: 0%;
 }
-
-.circle h1{
-    color: rgba(255, 92, 83, 0.34);
-    margin-bottom: 0%;
-}
-
 #device-bg{
     background-color: #F6F6F6;
+    margin-top: 3rem;
 }
+
 
 
 @media (max-width: 640px) {
@@ -140,4 +145,32 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
 .alert{
    color: red;
+        }
+
+
+        .circle-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
+        
+        .circle {
+          position: absolute;
+          width: 230px;
+          height: 230px;
+          background-color: #f0d1cf; /* Change the color as per your requirement */
+          border-radius: 50%;
+        }
+        
+        .circle-top-right {
+          top: -110px;
+          right: -80px;
+        }
+        
+        .circle-bottom-left {
+          bottom: -110px;
+          left: -80px;
         }
