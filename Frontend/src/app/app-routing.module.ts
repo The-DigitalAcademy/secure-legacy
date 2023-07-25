@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { GetstartedComponent } from './components/getstarted/getstarted.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RegistrationWelcomeComponent } from './components/registration-welcome/registration-welcome.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'getstarted', component: GetstartedComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'regwelcome', component: RegistrationWelcomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

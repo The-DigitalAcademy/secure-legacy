@@ -45,7 +45,7 @@ onSubmit(): void {
       this.tokenStorage.saveToken(data.accessToken);
       this.tokenStorage.saveUser(data);
       this.roles = this.tokenStorage.getUser().roles;
-      window.location.replace("/home")
+      window.location.replace("/regwelcome")
     },
     error: (err) => {
       this.errorMessage = err.error.message;

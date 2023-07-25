@@ -15,6 +15,7 @@ import { RequestPasswordComponent } from './components/request-password/request-
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { RegistrationWelcomeComponent } from './components/registration-welcome/registration-welcome.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     CarouselComponent,
     RequestPasswordComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegistrationWelcomeComponent
   ],
   imports: [
     BrowserModule,
