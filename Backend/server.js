@@ -30,9 +30,9 @@ app.use(cors());
 app.use('/auth', authRouter);
 
 
-// app.get('/', (req, res) => {
-//   res.json({'Project Name:': 'Secure Legacy'})
-// })
+app.get('/', (req, res) => {
+  res.json({'Project Name:': 'Secure Legacy'})
+})
 
 const PORT = process.env.PORT || 3000;
 
