@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
   signout(): void {
     this.tokenStorageService.signOut();
     window.location.reload();
-    window.location.replace("/landing")
+    window.location.replace("/login")
   }
 
 }

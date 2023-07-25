@@ -1,4 +1,59 @@
-*{
-    background-color: #F6F6F6;
-    height: 92vh;
+// *{
+//     background-color: #F6F6F6;
+//     height: 92vh;
+// }
+
+.rousel{
+    height: 80%;
+    
 }
+
+.itemss img{
+    width: 10rem;
+    height: 10rem;
+    // margin-left: 1rem;
+}
+
+.itemss{
+    display: flex;
+    margin-top: 2rem;
+    width: 16.5rem;
+    border: solid 1px;
+    margin-left: 4rem;
+}
+#reg-btn{
+   
+    border-radius: 22px;
+    background: #FF5C53;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+
+    @media (max-width: 640px) {
+        #reg-btn {
+            justify-content: center;
+            margin-top: 2.8rem;
+            width: 8rem;
+            height: 1.8rem;
+        }
+      }
+    
+      @media (max-width: 640px) {
+        #reg-btn button {
+            
+        }
+      }
+
+      .text-sm{
+        margin-top: -5px;
+      }
+
+      @media (max-width: 640px) {
+        .cover-info h1{
+           margin-top: 2.5rem;
+           font-weight: bold;
+           font-size: 1.1rem;
+           margin-bottom: -1rem;
+        }
+      }
+      
