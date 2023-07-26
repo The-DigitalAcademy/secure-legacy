@@ -37,7 +37,12 @@
           <a href="#" class="text-white hover:bg-white hover:text-black px-3 py-2 rounded-md text-sm font-medium">Profile</a>
           <a href="#" class="text-white hover:bg-white hover:text-black px-3 py-2 rounded-md text-sm font-medium">About Us</a>
           <a href="#" class="text-white hover:bg-white hover:text-black px-3 py-2 rounded-md text-sm font-medium">Help</a>
-          <a class="text-black bg-white hover:text-black px-3 py-2 rounded-md text-sm font-medium" (click)="signout()">Log Out</a>
+          <div *ngIf="!isLoggedIn">
+          <a class="text-black bg-white hover:text-black px-3 py-2 rounded-md text-sm font-medium" routerLink="/login">Login</a>
+           </div>
+           <div *ngIf="isLoggedIn">
+            <a class="text-black bg-white hover:text-black px-3 py-2 rounded-md text-sm font-medium" (click)="signout()">Log Out</a>
+             </div>
         </div>
       </div>
     </div>
@@ -47,6 +52,9 @@
   <div [ngClass]="{ 'hidden': !isMobileMenuOpen }" class="sm:hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1" id="small-text">
       <!-- Menu items -->
+      <div *ngIf="isLoggedIn">
+        <a class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium bg-white" routerLink="/home"><img src="https://img.icons8.com/?size=54&id=73&format=png" >Home</a>
+      </div>
       <a href="#" class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium bg-white"><img src="https://img.icons8.com/?size=54&id=VuNO5eSHIj35&format=png" >Useful Tools</a>
       <hr>
       <a href="#" class="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium bg-white"><img src="https://img.icons8.com/?size=54&id=77&format=png" >About Us</a>

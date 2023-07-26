@@ -11,6 +11,12 @@
     }
   }
 
+  @media (max-width: 640px) {
+    #frm {
+        margin-top: 4rem;
+    }
+  }
+
 
   @media (max-width: 640px) {
     #namesfrm input {
