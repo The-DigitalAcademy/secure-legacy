@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import Swal from 'sweetalert2'
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { UserauthService } from 'src/app/services/userauth.service';
 
@@ -54,6 +54,18 @@ export class LoginComponent implements OnInit {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
         //this.toastr.error("Login Failed, Try Again")
+       
+        Swal.fire({
+          title: 'User Not Found',
+           text: 'Please try again!',
+          icon: 'error',
+          width: 320,
+          confirmButtonText: 'OK',
+        }).then((result)=>{
+          if (result.value){
+            this.reloadPage()
+            
+          }})
       },
       
    });
