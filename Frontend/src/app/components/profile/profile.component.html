@@ -1,1 +1,138 @@
 <app-navbar></app-navbar>
+<div>
+    <h1>Product Recommender</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label>Do you have dependents?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.has_dependents" name="has_dependents" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.has_dependents" name="has_dependents" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Do you have any financial burdens or concerns?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.financial_burden_concern" name="financial_burden_concern" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.financial_burden_concern" name="financial_burden_concern" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Are you the primary breadwinner in your family?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.is_primary_breadwinner" name="is_primary_breadwinner" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.is_primary_breadwinner" name="is_primary_breadwinner" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Are you planning for your child's education?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.planning_for_child_education" name="planning_for_child_education" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.planning_for_child_education" name="planning_for_child_education" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Do you have a tax-efficient savings plan?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.tax_efficient_savings_plan" name="tax_efficient_savings_plan" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.tax_efficient_savings_plan" name="tax_efficient_savings_plan" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Do you have a physically demanding job?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.physically_demanding_job" name="physically_demanding_job" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.physically_demanding_job" name="physically_demanding_job" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Do you have sufficient emergency savings?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.sufficient_emergency_savings" name="sufficient_emergency_savings" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.sufficient_emergency_savings" name="sufficient_emergency_savings" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Are you willing to accept some level of risk in your investments?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.willing_to_accept_risk" name="willing_to_accept_risk" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.willing_to_accept_risk" name="willing_to_accept_risk" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Do you have specific financial goals?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.specific_financial_goals" name="specific_financial_goals" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.specific_financial_goals" name="specific_financial_goals" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Are you planning for retirement?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.planning_for_retirement" name="planning_for_retirement" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.planning_for_retirement" name="planning_for_retirement" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Do you have concerns about outliving your savings in retirement?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.concerns_about_outliving_savings" name="concerns_about_outliving_savings" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.concerns_about_outliving_savings" name="concerns_about_outliving_savings" value="false"> No
+        </label>
+      </div>
+  
+      <div>
+        <label>Do you have a retirement plan with tax benefits?</label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.retirement_plan_with_tax_benefits" name="retirement_plan_with_tax_benefits" value="true"> Yes
+        </label>
+        <label>
+          <input type="radio" [(ngModel)]="userAnswers.retirement_plan_with_tax_benefits" name="retirement_plan_with_tax_benefits" value="false"> No
+        </label>
+      </div>
+  
+      <button type="submit">Get Recommendations</button>
+    </form>
+  
+    <div *ngIf="recommendations.length > 0">
+      <h2>Recommended Products:</h2>
+      <ul>
+        <li *ngFor="let product of recommendations">
+          <strong>{{ product.title }}</strong>
+          <p>{{ product.explanation }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

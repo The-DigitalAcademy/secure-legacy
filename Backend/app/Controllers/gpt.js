@@ -49,22 +49,28 @@ const { getKidFriendlyExplanation } = require('../GPTServices/openai');
 async function getRecommendations(req, res) {
   const userAnswers = req.body.answers;
 
-  // Get recommended products based on user answers
-  const recommendedProducts = recommendInsuranceProduct(userAnswers);
+  try {
+    // Get recommended products based on user answers
+    const recommendedProducts = recommendInsuranceProduct(userAnswers);
 
-  // Get kid-friendly explanations for recommended products
-  const productExplanations = await Promise.all(
-    recommendedProducts.map(title => getKidFriendlyExplanation(title))
-  );
+    // Get kid-friendly explanations for recommended products
+    const productExplanations = await Promise.all(
+      recommendedProducts.map(title => getKidFriendlyExplanation(title))
+    );
 
-  const productsWithExplanations = recommendedProducts.map((title, index) => ({
-    title,
-    explanation: productExplanations[index],
-  }));
+    const productsWithExplanations = recommendedProducts.map((title, index) => ({
+      title,
+      explanation: productExplanations[index],
+    }));
 
-  res.json({ recommendedProducts: productsWithExplanations });
+    res.json({ recommendedProducts: productsWithExplanations });
+  } catch (error) {
+    console.error('Error fetching recommendations:', error.message);
+    res.status(500).json({ error: 'Error fetching recommendations' });
+  }
 }
 
 module.exports = {
   getRecommendations,
 };
+
