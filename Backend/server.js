@@ -98,11 +98,9 @@ const { authRouter } = require('./app/Routes/authRoutes');
 const sequelize = require('./app/Utils/database');
 const User = require('./app/Models/userModel');
 const app = express();
-
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const path = require('path');
-
 const PORT = process.env.PORT || 3000;
 
 // Swagger options
