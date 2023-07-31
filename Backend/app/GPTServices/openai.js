@@ -10,7 +10,7 @@ async function getKidFriendlyExplanation(title) {
       'https://api.openai.com/v1/engines/text-davinci-003/completions',
       // Use 'text-davinci-003' engine for GPT-3.5 Turbo
       {
-        prompt: `Explain "${title}" like a five-year-old, use a maximum of 70 words:`,
+        prompt: `Explain "${title}" like a five-year-old, use a minimum of 250 words:`,
         max_tokens: 50,
         temperature: 0.7,
       },
