@@ -58,10 +58,16 @@ async function getRecommendations(req, res) {
       recommendedProducts.map(title => getKidFriendlyExplanation(title))
     );
 
-    const productsWithExplanations = recommendedProducts.map((title, index) => ({
-      title,
-      explanation: productExplanations[index],
-    }));
+    // Filter out titles without explanations
+    const productsWithExplanations = recommendedProducts.reduce((acc, title, index) => {
+      if (productExplanations[index]) {
+        acc.push({
+          title,
+          explanation: productExplanations[index],
+        });
+      }
+      return acc;
+    }, []);
 
     res.json({ recommendedProducts: productsWithExplanations });
   } catch (error) {
@@ -73,4 +79,5 @@ async function getRecommendations(req, res) {
 module.exports = {
   getRecommendations,
 };
+
 
