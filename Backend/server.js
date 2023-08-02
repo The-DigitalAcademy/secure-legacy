@@ -139,10 +139,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Import the recommendations controller
-const { getRecommendations } = require('./app/Controllers/gpt');
-
+const { getRecommendations, getProducts } = require('./app/Controllers/gpt');
+app.post('/api/products', getProducts);
 // API route for recommendations
 app.post('/api/recommendations', getRecommendations);
+
 
 // Routes
 app.use('/auth', authRouter);
