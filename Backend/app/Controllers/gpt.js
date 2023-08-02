@@ -156,9 +156,73 @@ async function getProducts(req, res) {
   }
 }
 
+/**
+ * @swagger
+ * tags:
+ *   name: Word Meaning
+ *   description: API for searching the meaning of words one at a time using OPENAI.
+ */
+
+/**
+ * @swagger
+ * /api/meaning:
+ *   post:
+ *     tags: [Word Meaning]
+ *     summary: Get kid-friendly explanation for a given word.
+ *     description: Retrieve kid-friendly explanation for a provided word.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               word:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: A JSON object containing the word and its kid-friendly explanation.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 word:
+ *                   type: string
+ *                 explanation:
+ *                   type: string
+ *       500:
+ *         description: An error occurred while fetching the meaning of the word.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ */
+
+const { getExplanationForWord } = require('../GPTServices/openai');
+
+async function getMeaningOfWord(req, res) {
+  const word = req.body.word;
+
+  try {
+    // Get the kid-friendly explanation for the provided word
+    const explanation = await getExplanationForWord(word);
+
+    res.json({ word, explanation });
+  } catch (error) {
+    console.error('Error fetching the meaning of the word:', error.message);
+    res.status(500).json({ error: 'Error fetching the meaning of the word' });
+  }
+}
+
+
 module.exports = {
   getRecommendations,
-  getProducts
+  getProducts,
+  getMeaningOfWord
 };
 
 
