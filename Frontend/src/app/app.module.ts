@@ -16,6 +16,17 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { RegistrationWelcomeComponent } from './components/registration-welcome/registration-welcome.component';
+import { SurveyComponent } from './components/survey/survey.component';
+import { LearnbonusComponent } from './components/learnbonus/learnbonus.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatButtonModule} from '@angular/material/button';
+import {MatRadioModule} from '@angular/material/radio';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,13 +40,22 @@ import { RegistrationWelcomeComponent } from './components/registration-welcome/
     RequestPasswordComponent,
     DashboardComponent,
     NavbarComponent,
-    RegistrationWelcomeComponent
+    RegistrationWelcomeComponent,
+    SurveyComponent,
+    LearnbonusComponent
   ],
   imports: [
     BrowserModule,
+    MatButtonModule,
+    MatStepperModule,
     FormsModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

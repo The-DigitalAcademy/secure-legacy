@@ -1,0 +1,212 @@
+<app-navbar></app-navbar>
+<button *ngIf="!hidden" mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button>
+  <mat-stepper [linear]="isLinear" #stepper class="custom-stepper">
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <!-- <ng-template matStepLabel>Fill out your name</ng-template> -->
+        <mat-form-field class="firstCard">
+            <div class="number">
+                <h3>1 of 5</h3>
+            </div>
+            <div class="info-text">
+                <h4>
+                    By understanding your occupation, we can provide you with information about the level of coverage and benefits on financial protection, in case you are unable to work due to an accident or illness.
+                </h4>
+                <h2><b>Do you have a physically demanding job or engage in risky activities where there's a higher chance of injury or disability?</b></h2>
+                 <!-- <a  class="block max-w-sm p-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-white  ">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"></h5>
+                <p class="font-normal text-gray-700 dark:text-black"><b></b></p>
+            </a> -->
+            </div>            
+           
+            <mat-radio-group aria-label="Select an option"  formControlName="firstCtrl" required>
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <br>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+          <!-- <mat-label>Name</mat-label> -->
+          <input matInput  >
+        </mat-form-field>
+        <div class="btns">
+            <div class="btn-back">
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+            <div class="btn-next">
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- 2 -->
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+      <form [formGroup]="secondFormGroup">
+        <mat-form-field class="firstCard">
+            <div class="number">
+            <h3>2 of 5</h3>
+            </div>
+            <div class="info-text">
+                <h4>
+                    By understanding your occupation, we can provide you with information about the level of coverage and benefits on financial protection, in case you are unable to work due to an accident or illness.
+                </h4>
+                <h2><b>Do you have a physically demanding job or engage in risky activities where there's a higher chance of injury or disability?</b></h2>
+                 <!-- <a  class="block max-w-sm p-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-white  ">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"></h5>
+                <p class="font-normal text-gray-700 dark:text-black"><b></b></p>
+            </a> -->
+            </div>  
+          <!-- <mat-label>Address</mat-label> -->
+          <mat-radio-group aria-label="Select an option" formControlName="secondCtrl" required>
+            <mat-radio-button value="1">Yes</mat-radio-button>
+            <br>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+          
+          <input matInput  
+                 >
+        </mat-form-field>
+        <div class="btns">
+            <div class="btn-back">
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+            <div class="btn-next">
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- 3 -->
+    <mat-step [stepControl]="thirdFormGroup" label="Fill out your address">
+        <form [formGroup]="thirdFormGroup">
+          <mat-form-field class="firstCard">
+            <div class="number">
+              <h3>3 of 5</h3>
+            </div>
+            <div class="info-text">
+                <h4>
+                    By understanding your occupation, we can provide you with information about the level of coverage and benefits on financial protection, in case you are unable to work due to an accident or illness.
+                </h4>
+                <h2><b>Do you have a physically demanding job or engage in risky activities where there's a higher chance of injury or disability?</b></h2>
+                 <!-- <a  class="block max-w-sm p-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-white  ">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"></h5>
+                <p class="font-normal text-gray-700 dark:text-black"><b></b></p>
+            </a> -->
+            </div>  
+              <mat-radio-group aria-label="Select an option" formControlName="thirdCtrl" 
+              required>
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <br>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+            <!-- <mat-label>Address</mat-label> -->
+            <input matInput >
+          </mat-form-field>
+          <div class="btns">
+            <div class="btn-back">
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+            <div class="btn-next">
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </div>
+        </form>
+      </mat-step>
+
+      <!-- 4 -->
+
+      <mat-step [stepControl]="forthFormGroup" label="Fill out your address">
+        <form [formGroup]="forthFormGroup">
+          <mat-form-field class="firstCard">
+            <div class="number">
+              <h3>4 of 5</h3>
+            </div>
+            <div class="info-text">
+                <h4>
+                    By understanding your occupation, we can provide you with information about the level of coverage and benefits on financial protection, in case you are unable to work due to an accident or illness.
+                </h4>
+                <h2><b>Do you have a physically demanding job or engage in risky activities where there's a higher chance of injury or disability?</b></h2>
+                 <!-- <a  class="block max-w-sm p-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-white  ">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"></h5>
+                <p class="font-normal text-gray-700 dark:text-black"><b></b></p>
+            </a> -->
+            </div>  
+              <mat-radio-group aria-label="Select an option" formControlName="forthCtrl" 
+              required>
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <br>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+            <!-- <mat-label>Address</mat-label> -->
+            <input matInput >
+          </mat-form-field>
+          <div class="btns">
+            <div class="btn-back">
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+            <div class="btn-next">
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </div>
+        </form>
+      </mat-step>
+
+      <!-- 5 -->
+      <mat-step [stepControl]="fifthFormGroup" label="Fill out your address">
+        <form [formGroup]="fifthFormGroup">
+          <mat-form-field class="firstCard">
+            <div class="number">
+              <h3>5 of 5</h3>
+            </div>
+            <div class="info-text">
+                <h4>
+                    By understanding your occupation, we can provide you with information about the level of coverage and benefits on financial protection, in case you are unable to work due to an accident or illness.
+                </h4>
+                <h2><b>Do you have a physically demanding job or engage in risky activities where there's a higher chance of injury or disability?</b></h2>
+                 <!-- <a  class="block max-w-sm p-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-white  ">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"></h5>
+                <p class="font-normal text-gray-700 dark:text-black"><b></b></p>
+            </a> -->
+            </div>  
+              <mat-radio-group aria-label="Select an option" formControlName="fifthCtrl" 
+              required>
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <br>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+            <!-- <mat-label>Address</mat-label> -->
+            <input matInput >
+          </mat-form-field>
+          <div class="btns">
+            <div class="btn-back">
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+            <div class="btn-next">
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </div>
+        </form>
+      </mat-step>
+
+    <mat-step>
+        <div class="finalCard">
+            <ng-template matStepLabel>Done</ng-template>
+            <div class="Complete-image">
+               <img src="https://cdn.discordapp.com/attachments/1118162261240971307/1136623096275685417/flame-1837.png">
+            </div>
+            <div class="Complete-Page">
+                <h1>Baie Dankie, Bosele!</h1>
+                <h2>High five for learning with our app! Take a look at the personalized recommendations </h2>
+            </div>
+            <button class="complete-survey">View Recommendations</button>
+      <!-- <p>You are now done.</p> -->
+      <div class="retake">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Retake Survey</button>
+      </div>
+        </div>
+    </mat-step>
+  </mat-stepper>
+  

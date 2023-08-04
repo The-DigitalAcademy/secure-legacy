@@ -7,6 +7,8 @@ import { GetstartedComponent } from './components/getstarted/getstarted.componen
 import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegistrationWelcomeComponent } from './components/registration-welcome/registration-welcome.component';
+import { SurveyComponent } from './components/survey/survey.component';
+import { LearnbonusComponent } from './components/learnbonus/learnbonus.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,9 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'regwelcome', component: RegistrationWelcomeComponent },
+  { path: 'survey', component: SurveyComponent },
+  { path: 'learn', component: LearnbonusComponent },
+
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

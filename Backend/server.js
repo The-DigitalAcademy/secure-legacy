@@ -157,7 +157,7 @@ app.get('/', (req, res) => {
   try {
     await sequelize.authenticate();
     console.log('Connection to the database has been established successfully.');
-    await sequelize.sync({ force: true });
+    await sequelize.sync();
     console.log('All models were synchronized successfully.');
     app.listen(PORT, () => {
       console.log(`Server is running on http://localhost:${PORT}`);

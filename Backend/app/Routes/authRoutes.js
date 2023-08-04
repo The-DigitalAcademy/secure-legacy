@@ -1,5 +1,5 @@
 const express = require('express');
-const { registerUser, loginUser } = require('../Controllers/authController');
+const { registerUser, loginUser, resetPassword, requestPasswordReset } = require('../Controllers/authController');
 const { getAllUsers, getOneUser} = require('../Controllers/authController');
 const { authenticateJWT } = require('../Middleware/authMiddleware');
 
@@ -13,6 +13,10 @@ authRouter.post('/login', loginUser);
 // User routes (Example: get all users)
 authRouter.get('/', getAllUsers);
 authRouter.get('/:id', getOneUser);
+
+authRouter.post('/requestPasswordReset', requestPasswordReset)
+authRouter.post('/resetPassword', resetPassword)
+
 
 module.exports = {
   authRouter,
