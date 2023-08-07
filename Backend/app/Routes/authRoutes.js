@@ -11,8 +11,8 @@ authRouter.post('/register', registerUser);
 authRouter.post('/login', loginUser);
 
 // User routes (Example: get all users)
-authRouter.get('/', getAllUsers);
-authRouter.get('/:id', getOneUser);
+authRouter.get('/', getAllUsers, authenticateJWT);
+authRouter.get('/:id', getOneUser, authenticateJWT);
 
 authRouter.post('/requestPasswordReset', requestPasswordReset)
 authRouter.post('/resetPassword', resetPassword)

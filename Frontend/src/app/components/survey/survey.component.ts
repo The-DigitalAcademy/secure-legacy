@@ -9,7 +9,7 @@ import { GptService } from 'src/app/services/gpt.service';
 })
 export class SurveyComponent implements OnInit {
   firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
+    firstCtrl: [ '', Validators.required],
   });
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
@@ -26,11 +26,75 @@ export class SurveyComponent implements OnInit {
   isLinear = true;
   hidden = true;
 
-  constructor(private _formBuilder: FormBuilder, private gptservice: GptService) {}
-
-  ngOnInit(): void {
-  }
+  userAnswers = {
+    has_dependents: false,
+    planning_for_child_education: false,
+    physically_demanding_job: false,
+    specific_financial_goals: false,
+    retirement_plan_with_tax_benefits: false
+  };
 
  
+  recommendations: any[] = [];
+
+  constructor(private _formBuilder: FormBuilder, private gptservice: GptService) {}
+
+
+  ngOnInit(): void {
+    console.log(this.firstFormGroup)
+  }
+
+  // onSubmit() {
+  //   this.gptservice
+  //     .getRecommendations(this.userAnswers)
+  //     .subscribe(
+  //       (data) => {
+  //         this.recommendations = data.recommendedProducts;
+  //         console.log(this.recommendations)
+  //       },
+  //       (error) => {
+  //         console.error('Error fetching recommendations:', error);
+  //       }
+  //     );
+  // }
+
+  // DONE(){
+  //   this.gptservice
+  //   .getRecommendations(this.userAnswers)
+  //   .subscribe(
+  //     (data) => {
+  //       this.recommendations = data.recommendedProducts;
+  //       console.log(this.recommendations)
+  //       console.log("this is retuning something")
+  //       console.log(this.userAnswers)
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching recommendations:', error);
+  //     }
+  //   );
+  // }
+ 
+  DONE() {
+    this.userAnswers = {
+      has_dependents: this.secondFormGroup.get('secondCtrl')?.value === 'true',
+      planning_for_child_education: this.fifthFormGroup.get('fifthCtrl')?.value === 'true',
+      physically_demanding_job: this.firstFormGroup.get('firstCtrl')?.value === 'true',
+      specific_financial_goals: this.forthFormGroup.get('forthCtrl')?.value === 'true',
+      retirement_plan_with_tax_benefits: this.thirdFormGroup.get('thirdCtrl')?.value === 'true',
+    };
+  
+    this.gptservice.getRecommendations(this.userAnswers).subscribe(
+      (data) => {
+        this.recommendations = data.recommendedProducts;
+        console.log(this.recommendations);
+        console.log('this is returning something');
+        console.log(this.userAnswers);
+      },
+      (error) => {
+        console.error('Error fetching recommendations:', error);
+      }
+    )
+
+}
 
 }

@@ -224,7 +224,20 @@
       }
   }
 
-
+  :host {
+    ::ng-deep {
+      #view-prod {
+        color: black;
+        height: 2.5rem;
+        padding: 0.8rem;
+        border-radius: 1rem;
+        text-align: center;
+        background-color: white;
+        
+        }
+          
+      }
+  }
 
 // info-text  mat-input-element  Complete-Page
 
