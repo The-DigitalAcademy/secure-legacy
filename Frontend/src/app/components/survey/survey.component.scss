@@ -1,251 +1,123 @@
-
-:host {
-    ::ng-deep {
-        .mat-horizontal-stepper-header-container.ng-tns-c89-0.ng-star-inserted {
-            display: none;
-          }
-          
-      }
-  }
-
-
+// Use This For ng material
 //   :host {
 //     ::ng-deep {
-        
-          
 //       }
 //   }
 
-  :host {
-    ::ng-deep {
-        .firstCard {
-            // background-color: green;
-            margin-top: 2rem;
-            // border-radius: 1rem;
-            
-        }
-          
+:host {
+  ::ng-deep {
+    .mat-horizontal-stepper-header-container.ng-tns-c89-0.ng-star-inserted {
+      display: none;
+    }
+
+    .firstCard {
+      margin-top: 2rem;
+    }
+
+    .btns button {
+      background-color: #ff5c53;
+      width: 5rem;
+      border-radius: 1rem;
+      color: white;
+      margin-bottom: 1;
+      height: 2rem;
+    }
+    .btn-next {
+      position: relative;
+      right: -15rem;
+      top: -2rem;
+    }
+    .btn-back {
+      margin-left: 1rem;
+    }
+    mat-radio-button {
+      border: solid 1px;
+      padding: 1rem;
+      width: 19rem;
+      margin-left: 1rem;
+      border-radius: 1rem;
+      margin-top: 1rem;
+    }
+    .number {
+      margin-left: 9.3rem;
+      margin-bottom: 3rem;
+      margin-top: -5rem;
+    }
+    form {
+      margin-top: 5rem;
+      border: solid 1px;
+      border-radius: 1rem;
+    }
+
+    #view-prod {
+      color: black;
+      height: 2.5rem;
+      padding: 0.8rem;
+      border-radius: 1rem;
+      text-align: center;
+      background-color: white;
+    }
+
+    .info-text {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-input-element {
+      display: none;
+    }
+
+    .finalCard {
+      margin-top: 5rem;
+    }
+
+    @media (max-width: 640px) {
+      .complete-survey {
+        background-color: #ff5c53;
+        margin-left: 54px;
+        margin-top: 1.5rem;
+        width: 15rem;
+        height: 2.8rem;
+        color: white;
+        border-radius: 2rem;
+        padding: 0.5rem;
+        padding-bottom: 5px;
+        font-weight: bold;
       }
-  }
+    }
 
-  .firstCard {
-    width: 342px;
-  }
-
-
-    :host {
-    ::ng-deep {
-        .btns button{
-            background-color: #FF5C53 ;
-            width: 5rem;
-            border-radius: 1rem;
-            color: white;
-            margin-bottom: 1;
-            // position: relative;
-            // top: -1rem;
-            // right: -16rem;
-            height: 2rem;
-        }
-          
+    .Complete-Page {
+      text-align: center;
+      h1 {
+        font-size: larger;
+        font-size: 2rem;
+        font-weight: bold;
       }
-  }
-
-    :host {
-    ::ng-deep {
-        .btn-next{
-            position: relative;
-            right: -15rem;
-            top: -2rem;
-            
-        }
-          
+      h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        font-size: large;
+        font-size: 1.2rem;
       }
+    }
+
+    .Complete-image img {
+      margin-left: 5rem;
+      width: 12rem;
+    }
+
+    .retake {
+      margin-left: 70px;
+    }
   }
+}
 
-  :host {
-    ::ng-deep {
-        .btn-back{
-            margin-left: 1rem;
-        }
-          
-      }
-  }
-
-  :host {
-    ::ng-deep {
-        mat-radio-button{
-            border: solid 1px;
-            padding: 1rem;
-            width: 19rem;
-            margin-left: 1rem;
-            border-radius: 1rem;
-            margin-top: 1rem;
-        }
-          
-      }
-  }
-
-    :host {
-    ::ng-deep {
-        .number{
-            margin-left: 9.3rem;
-            margin-bottom: 3rem;
-            margin-top: -5rem;
-        }
-          
-      }
-  }
-
-    :host {
-    ::ng-deep {
-        form{
-            
-            margin-top: 5rem;
-            border: solid 1px;
-            border-radius: 1rem;
-        }
-          
-      }
-  }
-
-  :host {
-    ::ng-deep {
-        .info-text  {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-          
-      }
-  }
-
-
-  :host {
-    ::ng-deep {
-        .mat-form-field-underline  {
-            display: none;
-            
-
-        }
-          
-      }
-  }
-
-  :host {
-    ::ng-deep {
-        .mat-input-element  {
-            display: none;
-            
-
-        }
-          
-      }
-  }
-
-
-  :host {
-    ::ng-deep {
-        .finalCard {
-           margin-top: 5rem;
-            
-
-        }
-          
-      }
-  }
-
-  :host {
-    ::ng-deep {
-        @media (max-width: 640px) {
-            .complete-survey {
-                background-color: #FF5C53;
-                margin-left: 54px;
-                margin-top: 1.5rem;
-                width: 15rem;
-                height: 2.8rem;
-                color: white;
-                border-radius: 2rem;
-                padding: 0.5rem;
-                padding-bottom: 5px;
-                font-weight: bold;
-
-            }
-          }
-          
-      }
-  }
-
-
-  :host {
-    ::ng-deep {
-        .Complete-Page {
-            text-align: center;
-           h1{
-            font-size: larger;
-            font-size: 2rem;
-            font-weight: bold;
-           }
-           h2{
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            margin-left: 3rem;
-            margin-right: 3rem;
-            font-size: large;
-            font-size: 1.2rem;
-           }
-            
-
-        }
-          
-      }
-  }
-
-  :host {
-    ::ng-deep {
-        .Complete-image img {
-            margin-left: 5rem;
-            width: 12rem;
-          
-            
-
-        }
-          
-      }
-  }
-
-  :host {
-    ::ng-deep {
-        .retake {
-            margin-left: 70px;
-          
-            
-
-        }
-          
-      }
-  }
-
-  :host {
-    ::ng-deep {
-      #view-prod {
-        color: black;
-        height: 2.5rem;
-        padding: 0.8rem;
-        border-radius: 1rem;
-        text-align: center;
-        background-color: white;
-        
-        }
-          
-      }
-  }
-
-// info-text  mat-input-element  Complete-Page
-
-// @media (max-width: 640px) {
-//     #reg-btn {
-//         margin-left: 70px;
-//         margin-top: 1.5rem;
-//         width: 10rem;
-//         height: 2.8rem;
-//     }
-//   }
+.firstCard {
+  width: 342px;
+}

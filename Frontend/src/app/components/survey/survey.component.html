@@ -7,7 +7,6 @@
      <!-- 1 -->
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <!-- <ng-template matStepLabel>Fill out your name</ng-template> -->
         <mat-form-field class="firstCard">
             <div class="number">
                 <h3>1 of 5</h3>
@@ -17,10 +16,6 @@
                   DISABILITY  By understanding your occupation, we can provide you with information about the level of coverage and benefits on financial protection, in case you are unable to work due to an accident or illness.
                 </h4>
                 <h2><b>Do you have a physically demanding job or engage in risky activities where there's a higher chance of injury or disability?</b></h2>
-                 <!-- <a  class="block max-w-sm p-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-white  ">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"></h5>
-                <p class="font-normal text-gray-700 dark:text-black"><b></b></p>
-            </a> -->
             </div>            
            
             <mat-radio-group aria-label="Select an option"  formControlName="firstCtrl" required>
@@ -28,7 +23,6 @@
                 <br>
                 <mat-radio-button [(ngModel)]="userAnswers.physically_demanding_job" name="physically_demanding_job" value="false">No</mat-radio-button>
               </mat-radio-group>
-          <!-- <mat-label>Name</mat-label> -->
           <input matInput  >
         </mat-form-field>
         <div class="btns">
@@ -54,12 +48,7 @@
                     Life Cover By understanding your occupation, we can provide you with information about the level of coverage and benefits on financial protection, in case you are unable to work due to an accident or illness.
                 </h4>
                 <h2><b>Do you have a physically demanding job or engage in risky activities where there's a higher chance of injury or disability?</b></h2>
-                 <!-- <a  class="block max-w-sm p-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-white  ">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"></h5>
-                <p class="font-normal text-gray-700 dark:text-black"><b></b></p>
-            </a> -->
             </div>  
-          <!-- <mat-label>Address</mat-label> -->
           <mat-radio-group aria-label="Select an option" formControlName="secondCtrl" required>
             <mat-radio-button [(ngModel)]="userAnswers.has_dependents" name="has_dependents" value=true>Yes</mat-radio-button>
             <br>
@@ -92,10 +81,6 @@
                    Retirement By understanding your occupation, we can provide you with information about the level of coverage and benefits on financial protection, in case you are unable to work due to an accident or illness.
                 </h4>
                 <h2><b>Do you have a physically demanding job or engage in risky activities where there's a higher chance of injury or disability?</b></h2>
-                 <!-- <a  class="block max-w-sm p-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-white  ">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"></h5>
-                <p class="font-normal text-gray-700 dark:text-black"><b></b></p>
-            </a> -->
             </div>  
               <mat-radio-group aria-label="Select an option" formControlName="thirdCtrl" 
               required>
@@ -130,10 +115,6 @@
                     INVESTMENTS By understanding your occupation, we can provide you with information about the level of coverage and benefits on financial protection, in case you are unable to work due to an accident or illness.
                 </h4>
                 <h2><b>Do you have a physically demanding job or engage in risky activities where there's a higher chance of injury or disability?</b></h2>
-                 <!-- <a  class="block max-w-sm p-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-white  ">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"></h5>
-                <p class="font-normal text-gray-700 dark:text-black"><b></b></p>
-            </a> -->
             </div>  
               <mat-radio-group aria-label="Select an option" formControlName="forthCtrl" 
               required>
@@ -141,7 +122,7 @@
                 <br>
                 <mat-radio-button [(ngModel)]="userAnswers.specific_financial_goals" name="specific_financial_goals" value="false">No</mat-radio-button>
               </mat-radio-group>
-            <!-- <mat-label>Address</mat-label> -->
+         
             <input matInput >
           </mat-form-field>
           <div class="btns">
@@ -167,10 +148,6 @@
                    EDUCANTIONAL TRUST By understanding your occupation, we can provide you with information about the level of coverage and benefits on financial protection, in case you are unable to work due to an accident or illness.
                 </h4>
                 <h2><b>Do you have a physically demanding job or engage in risky activities where there's a higher chance of injury or disability?</b></h2>
-                 <!-- <a  class="block max-w-sm p-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:bg-white  ">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"></h5>
-                <p class="font-normal text-gray-700 dark:text-black"><b></b></p>
-            </a> -->
             </div>  
               <mat-radio-group aria-label="Select an option" formControlName="fifthCtrl" 
               required>
@@ -178,7 +155,6 @@
                 <br>
                 <mat-radio-button [(ngModel)]="userAnswers.planning_for_child_education" name="planning_for_child_education" value="false">No</mat-radio-button>
               </mat-radio-group>
-            <!-- <mat-label>Address</mat-label> -->
             <input matInput >
           </mat-form-field>
           <div class="btns">
@@ -202,9 +178,7 @@
                 <h1>Baie Dankie, Bosele!</h1>
                 <h2>High five for learning with our app! Take a look at the personalized recommendations </h2>
             </div>
-            <!-- <button class="complete-survey" type="submit" (click)="DONE()">View Recommendations</button><br> -->
             <button class="complete-survey" mat-button matStepperNext>View Recommendations</button>
-      <!-- <p>You are now done.</p> -->
       <div class="retake">
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Retake Survey</button>
@@ -214,6 +188,7 @@
     </mat-step>
 
   </form>
+
   <div>
     <mat-step [stepControl]="fifthFormGroup" label="Fill out your address" *ngIf="recommendations.length > 0">
       <form [formGroup]="fifthFormGroup">
@@ -221,9 +196,9 @@
         
           <div class="info-text" *ngFor="let product of recommendations">
               
-<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100" style="background-color: #FF5C53 ;">
+<a class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100" style="background-color: #FF5C53 ;">
   <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ product.title }}</h1>
-  <p class="font-normal text-gray-700 dark:text-white" id="view-prod">View This Product</p>
+  <p class="font-normal text-gray-700 dark:text-white" id="view-prod" (click)="selectProduct(product)">View This Product</p>
 </a>
 <br>
 
@@ -236,14 +211,15 @@
       </form>
     </mat-step>
   </div>
+
   <div>
-    <mat-step [stepControl]="fifthFormGroup" label="Fill out your address" *ngIf="recommendations.length < 0">
+    <mat-step [stepControl]="fifthFormGroup" label="Fill out your address" *ngIf="recommendations.length == 0">
       <form [formGroup]="fifthFormGroup">
         <mat-form-field class="firstCard">
         
           <div class="info-text" >
               
-<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100" style="background-color: #FF5C53 ;">
+<a class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100" style="background-color: #FF5C53 ;">
   <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">No Recommendations Generated </h1>
   <p class="font-normal text-gray-700 dark:text-white" id="view-prod">Please Retake Survey Or Try Again Later</p>
 </a>
@@ -281,15 +257,28 @@
       </form>
     </mat-step>
   </div>
+
+  <div>
+    <mat-step [stepControl]="selectedProductFormGroup" *ngIf="selectedProduct">
+      <ng-template matStepLabel>Selected Product</ng-template>
+      <form [formGroup]="selectedProductFormGroup">
+        <div class="step-content">
+          <mat-form-field class="selected-product">
+            <div class="info-text">
+              <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ selectedProduct.title }}</h1>
+              <p class="font-normal text-gray-700 dark:text-white">{{ selectedProduct.explanation }}</p>
+            </div>
+          </mat-form-field>
+        </div>
+        <div class="btns">
+          <div class="btn-back">
+            <button mat-button matStepperPrevious>Back</button>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+  </div>
+
   </mat-stepper>
   
 
-  <!-- <div *ngIf="recommendations.length > 0">
-    <h2>Recommended Products:</h2>
-    <ul>
-      <li *ngFor="let product of recommendations">
-        <strong>{{ product.title }}</strong>
-        <p>{{ product.explanation }}</p>
-      </li>
-    </ul>
-  </div> -->

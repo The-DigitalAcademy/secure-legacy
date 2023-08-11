@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit,  ViewChild } from '@angular/core';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { GptService } from 'src/app/services/gpt.service';
-
+import { MatStepper } from '@angular/material/stepper'; 
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
@@ -37,11 +37,21 @@ export class SurveyComponent implements OnInit {
  
   recommendations: any[] = [];
 
+  selectedProduct: any; // To store the selected product
+  selectedProductFormGroup: FormGroup = this._formBuilder.group({}); // Initialize FormGroup for the selected product st // FormGroup for the selected product step
+  @ViewChild('stepper') stepper!: MatStepper;
+
   constructor(private _formBuilder: FormBuilder, private gptservice: GptService) {}
 
 
   ngOnInit(): void {
     console.log(this.firstFormGroup)
+    this.selectedProductFormGroup = this._formBuilder.group({});
+  }
+
+  selectProduct(product: any) {
+    this.selectedProduct = product;
+    this.stepper.selectedIndex = this.stepper.steps.length - 1; // Move to the selected product step
   }
 
   // onSubmit() {

@@ -1,5 +1,5 @@
 const express = require('express');
-const { registerUser, loginUser, resetPassword, requestPasswordReset } = require('../Controllers/authController');
+const { registerUser, loginUser } = require('../Controllers/authController');
 const { getAllUsers, getOneUser} = require('../Controllers/authController');
 const { authenticateJWT } = require('../Middleware/authMiddleware');
 
@@ -14,8 +14,6 @@ authRouter.post('/login', loginUser);
 authRouter.get('/', getAllUsers, authenticateJWT);
 authRouter.get('/:id', getOneUser, authenticateJWT);
 
-authRouter.post('/requestPasswordReset', requestPasswordReset)
-authRouter.post('/resetPassword', resetPassword)
 
 
 module.exports = {
