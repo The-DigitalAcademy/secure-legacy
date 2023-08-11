@@ -1,148 +1,126 @@
-#start{
-    width: 240px;
-height: 50px;
-flex-shrink: 0;
-border-radius: 0.5rem;
-background: rgba(217, 217, 217, 0.35);
-margin-bottom: 2.5rem;
+#start {
+  width: 240px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+  background: rgba(217, 217, 217, 0.35);
+  margin-bottom: 2.5rem;
 }
 
-.rounded-md{
-    width: 120px;
-height: 50px;
-flex-shrink: 0;
+.rounded-md {
+  width: 120px;
+  height: 50px;
+  flex-shrink: 0;
 }
 
-
-
-.relative{
-    background: #F6F6F6;
+.relative {
+  background: #f6f6f6;
 }
 
-.rounded-md{
-    border-radius: 0.5rem;
-background: #FFF;
+.rounded-md {
+  border-radius: 0.5rem;
+  background: #fff;
 }
 
+#contain {
+  margin-top: -5rem;
+  margin-bottom: -5rem;
+}
 
+/* Media for mobile devices */
 
+@media (max-width: 640px) {
+  #start {
+    margin-left: 3rem;
+  }
 
-#contain{
-    margin-top: -5rem;
+  .relative {
+    height: 110vh;
+    box-shadow: none;
+  }
+
+  #contain {
+    height: 100vh;
+    border: none;
+    border-style: none;
+    box-shadow: none;
+    margin-bottom: -20rem;
+  }
+
+  #image-start {
+    margin-top: -10.5rem;
+    margin-left: 2.5rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+    width: 250px;
+    height: 275px;
+  }
+
+  #image-start img {
+    margin-left: 0.3rem;
+    margin-bottom: -2rem;
+    border: solid 1px;
+    padding: 1.5rem;
+    border-radius: 15px;
+    width: 45rem;
+    background-color: rgb(255, 255, 222);
+  }
+
+  #log-back {
+    margin-left: -3rem;
+    text-align: center;
+  }
+
+  #log-back text-sm {
+    margin-top: 2rem;
+  }
+
+  #small-sty {
+    margin: 0%;
+    padding: 0%;
+  }
+
+  #info-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .move {
+    position: relative;
+    top: -5rem;
+  }
+
+  #image-start {
+    position: relative;
+    top: -3rem;
+  }
+
+  #log-back {
+    padding-top: 15px;
+    font-size: large;
+  }
+}
+
+/* Media for Desktop devices */
+
+@media (min-width: 1024px) {
+  #image-start img {
+    width: 60rem;
+    margin-top: 3rem;
+  }
+
+  #start {
+    margin-left: 6rem;
     margin-bottom: -5rem;
-    
+  }
+
+  #small-sty {
+    margin-top: 5rem;
+  }
 }
 
-@media (max-width: 640px) {
-    #start {
-      margin-left: 3rem;
-    }
-
-
-
-
-
-    
-  }
-
-  @media (max-width: 640px) {
-   .relative {
-      height: 110vh;
-      box-shadow: none;
-      // margin-bottom: -2rem;
-    //   margin-top: -2rem;
-    }
-  }
-
-  @media (max-width: 640px) {
-    #contain {
-       height: 100vh;
-       border: none;
-       border-style: none;
-       box-shadow: none;
-       margin-bottom: -20rem;
-
-     
-     }
-   }
-
-@media (max-width: 640px) {
-    #image-start  {
-        margin-top: -10.5rem;
-        margin-left: 2.5rem;
-        margin-bottom: 3rem;
-      justify-content: center;
-      width: 250px;
-      height: 275px;
-    }
-
-    #image-start img{
-      margin-left: .3rem;
-      margin-bottom: -2rem;
-      border: solid 1px;
-      padding: 1.5rem;
-      border-radius: 15px;
-      width: 45rem;
-      background-color: rgb(255, 255, 222);
-    }
-  }
-
-  @media (max-width: 640px) {
-    #log-back {
-       margin-left: -3rem;
-       text-align: center;
-    }
-  }
-
-  @media (max-width: 640px) {
-    #log-back text-sm {
-       margin-top: 2rem;
-    }
-  }
-
-  @media (max-width: 640px) {
-    #small-sty {
-       margin: 0%;
-       padding: 0%;
-    }
-  }
-
-  @media (max-width: 640px) {
-    #info-text h3{
-     font-size: 1.3rem;
-    }
-  }
-
-
-  
-  @media (min-width: 1024px) {
-    #image-start img {
-       width: 60rem;
-      margin-top: 3rem;
-    }
-  }
-
-
-  @media (min-width: 1024px) {
-    #start {
-      margin-left: 6rem;
-      margin-bottom: -5rem;
-    }
-  }
-
-  
-
-  @media (min-width: 1024px) {
-    #small-sty {
-     margin-top: 5rem;
-    }
-  }
-
-  .h-80 {
-    height: 12rem;
+.h-80 {
+  height: 12rem;
 }
-  
-
 
 .relative[_ngcontent-umr-c52] {
   height: 109vh;
@@ -174,30 +152,4 @@ background: #FFF;
 .circle-bottom-left {
   bottom: -110px;
   left: -80px;
-}
-
-// .move{
-//   margin-top: -2rem;
-// }
-
-// .move img{
-//   margin-top: -10rem;
-// }
-
-@media (max-width: 640px) {
-  .move{
-   position: relative;
-   top: -5rem;
-  }
-
-  #image-start{
-    position: relative;
-   top: -3rem;
-  }
-
-  #log-back{
-    padding-top: 15px;
-    font-size: large;
-  }
-
 }

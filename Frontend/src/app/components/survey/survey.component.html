@@ -234,7 +234,8 @@
       </form>
     </mat-step>
   </div>
-
+  
+  <!-- If the any products were generated then this will appear -->
   <div>
     <mat-step [stepControl]="fifthFormGroup" label="Fill out your address" *ngIf="recommendations.length > 0">
       <form [formGroup]="fifthFormGroup">
