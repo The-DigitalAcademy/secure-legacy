@@ -1,7 +1,7 @@
 // services/openai.js
 const axios = require('axios');
 const dotenv = require('dotenv');
-const openAIApiKey = '';
+const openAIApiKey = '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';
 // const openAIApiKey = `${process.env.APIKEY}`
 
 async function getKidFriendlyExplanation(title) {

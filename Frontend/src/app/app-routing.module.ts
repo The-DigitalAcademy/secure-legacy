@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'getstarted', component: GetstartedComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'regwelcome', component: RegistrationWelcomeComponent },
+  { path: 'welcome', component: RegistrationWelcomeComponent },
   { path: 'survey', component: SurveyComponent },
   { path: 'learn', component: LearnbonusComponent },
 

@@ -228,6 +228,53 @@
 <br>
 
           </div>  
+
+          
+          <!-- <mat-label>Address</mat-label> -->
+          <input matInput >
+        </mat-form-field>
+      </form>
+    </mat-step>
+  </div>
+  <div>
+    <mat-step [stepControl]="fifthFormGroup" label="Fill out your address" *ngIf="recommendations.length < 0">
+      <form [formGroup]="fifthFormGroup">
+        <mat-form-field class="firstCard">
+        
+          <div class="info-text" >
+              
+<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100" style="background-color: #FF5C53 ;">
+  <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">No Recommendations Generated </h1>
+  <p class="font-normal text-gray-700 dark:text-white" id="view-prod">Please Retake Survey Or Try Again Later</p>
+</a>
+<br>
+
+          </div>  
+
+          
+          <!-- <mat-label>Address</mat-label> -->
+          <input matInput >
+        </mat-form-field>
+      </form>
+    </mat-step>
+  </div>
+
+  <div>
+    <mat-step [stepControl]="fifthFormGroup" label="Fill out your address" *ngIf="recommendations.length > 0">
+      <form [formGroup]="fifthFormGroup">
+        <mat-form-field class="firstCard">
+        
+          <div class="info-text" *ngFor="let product of recommendations">
+              
+<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100" style="background-color: #FF5C53 ;">
+  <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ product.title }}</h1>
+  <p class="font-normal text-gray-700 dark:text-white" id="view-prod">{{ product.explanation }}</p>
+</a>
+<br>
+
+          </div>  
+
+          
           <!-- <mat-label>Address</mat-label> -->
           <input matInput >
         </mat-form-field>
