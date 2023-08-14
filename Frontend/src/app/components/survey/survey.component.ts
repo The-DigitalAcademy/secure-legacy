@@ -23,6 +23,15 @@ export class SurveyComponent implements OnInit {
   fifthFormGroup = this._formBuilder.group({
     fifthCtrl: ['', Validators.required],
   });
+  sixthFormGroup = this._formBuilder.group({
+    // sixthCtrl: ['', Validators.required],
+  });
+  seventhFormGroup = this._formBuilder.group({
+    // seventhCtrl: ['', Validators.required],
+  });
+  selectedProductFormGroup = this._formBuilder.group({
+    // seventhCtrl: ['', Validators.required],
+  });
   isLinear = true;
   hidden = true;
 
@@ -34,11 +43,12 @@ export class SurveyComponent implements OnInit {
     retirement_plan_with_tax_benefits: false
   };
 
- 
+  simplified: string = '';
   recommendations: any[] = [];
-
+  productmeaning: string = ''
+  select = false
   selectedProduct: any; // To store the selected product
-  selectedProductFormGroup: FormGroup = this._formBuilder.group({}); // Initialize FormGroup for the selected product st // FormGroup for the selected product step
+  // selectedProductFormGroup: FormGroup = this._formBuilder.group({}); // Initialize FormGroup for the selected product st // FormGroup for the selected product step
   @ViewChild('stepper') stepper!: MatStepper;
 
   constructor(private _formBuilder: FormBuilder, private gptservice: GptService) {}
@@ -51,9 +61,29 @@ export class SurveyComponent implements OnInit {
 
   selectProduct(product: any) {
     this.selectedProduct = product;
+    this.getMeaningOfWord()
+    console.log("this is me selecting" + this.selectedProduct.title) //This Displays The Selected Product
+    console.log("meaning is: " + this.simplified)
     this.stepper.selectedIndex = this.stepper.steps.length - 1; // Move to the selected product step
+    this.select = true
   }
 
+  async getMeaningOfWord() {
+    try {
+      const response = await this.gptservice
+        .getMeaningOfWord(this.selectedProduct.title)
+        .toPromise();
+      this.simplified = response.explanation;
+      console.log("from async word: " + this.simplified)
+      this.select = true
+    } catch (error) {
+      console.error('Error fetching the meaning of the word:', error);
+    }
+  }
+
+  // onSubmit() {
+  //   this.getMeaningOfWord();
+  // }
   // onSubmit() {
   //   this.gptservice
   //     .getRecommendations(this.userAnswers)
@@ -84,27 +114,27 @@ export class SurveyComponent implements OnInit {
   //   );
   // }
  
-  DONE() {
-    this.userAnswers = {
-      has_dependents: this.secondFormGroup.get('secondCtrl')?.value === 'true',
-      planning_for_child_education: this.fifthFormGroup.get('fifthCtrl')?.value === 'true',
-      physically_demanding_job: this.firstFormGroup.get('firstCtrl')?.value === 'true',
-      specific_financial_goals: this.forthFormGroup.get('forthCtrl')?.value === 'true',
-      retirement_plan_with_tax_benefits: this.thirdFormGroup.get('thirdCtrl')?.value === 'true',
-    };
+//   DONE() {
+//     this.userAnswers = {
+//       has_dependents: this.secondFormGroup.get('secondCtrl')?.value === 'true',
+//       planning_for_child_education: this.fifthFormGroup.get('fifthCtrl')?.value === 'true',
+//       physically_demanding_job: this.firstFormGroup.get('firstCtrl')?.value === 'true',
+//       specific_financial_goals: this.forthFormGroup.get('forthCtrl')?.value === 'true',
+//       retirement_plan_with_tax_benefits: this.thirdFormGroup.get('thirdCtrl')?.value === 'true',
+//     };
   
-    this.gptservice.getRecommendations(this.userAnswers).subscribe(
-      (data) => {
-        this.recommendations = data.recommendedProducts;
-        console.log(this.recommendations);
-        console.log('this is returning something');
-        console.log(this.userAnswers);
-      },
-      (error) => {
-        console.error('Error fetching recommendations:', error);
-      }
-    )
+//     this.gptservice.getRecommendations(this.userAnswers).subscribe(
+//       (data) => {
+//         this.recommendations = data.recommendedProducts;
+//         console.log(this.recommendations);
+//         console.log('this is returning something');
+//         console.log(this.userAnswers);
+//       },
+//       (error) => {
+//         console.error('Error fetching recommendations:', error);
+//       }
+//     )
 
-}
+// }
 
 }
