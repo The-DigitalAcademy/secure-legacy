@@ -2,8 +2,8 @@
 <button *ngIf="!hidden" mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
   </button>
-  <mat-stepper [linear]="isLinear" #stepper class="custom-stepper">
-    <form >
+  <mat-stepper [linear]="isLinear" #stepper class="custom-stepper" class="questionForm">
+    <form>
      <!-- 1 Physically Demanding-->
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
@@ -190,7 +190,7 @@
 
 
  <mat-step [stepControl]="sixthFormGroup" label="Fill out your address" *ngIf="recommendations.length > 0">
-        <form [formGroup]="sixthFormGroup">
+        <form [formGroup]="sixthFormGroup" >
           <mat-form-field class="firstCard">
             <div *ngIf="!select">
               <div class="info-text" *ngFor="let product of recommendations">
@@ -201,16 +201,24 @@
                   
                 </a>
                 <br>
+                <!-- <div *ngSwitch="">
                 
-                          </div> 
+                </div> -->
+                </div> 
             </div>
-            <div *ngIf="select">
-              <h1>product name </h1>
-              <p>{{this.simplified}}</p>
+            <!-- <div *ngIf="select">
+               <div *ngFor="let product of recommendations" >
+                <h2>{{product.title}}</h2>
+                <h3>{{product.explanation}}</h3>
+                <button mat-button (click)="clearSelect()" >Back</button>
+                </div>
+            </div> -->
+            <div *ngIf="select" class="selected">
+              <h2>{{this.selectedProduct.title}}</h2>
+              <h3>{{this.selectedProduct.explanation}}</h3>
+              <button mat-button (click)="clearSelect()">Back</button>
             </div>
            
-            
-            <!-- <mat-label>Address</mat-label> -->
             <input matInput >
           </mat-form-field>
           <div class="btns">

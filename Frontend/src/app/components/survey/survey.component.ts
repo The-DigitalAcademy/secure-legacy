@@ -47,6 +47,7 @@ export class SurveyComponent implements OnInit {
   recommendations: any[] = [];
   productmeaning: string = ''
   select = false
+  prodName: string = ''
   selectedProduct: any; // To store the selected product
   // selectedProductFormGroup: FormGroup = this._formBuilder.group({}); // Initialize FormGroup for the selected product st // FormGroup for the selected product step
   @ViewChild('stepper') stepper!: MatStepper;
@@ -61,8 +62,10 @@ export class SurveyComponent implements OnInit {
 
   selectProduct(product: any) {
     this.selectedProduct = product;
-    this.getMeaningOfWord()
-    console.log("this is me selecting" + this.selectedProduct.title) //This Displays The Selected Product
+    
+    // this.getMeaningOfWord()
+    console.log("this is me selecting: " + this.selectedProduct.title) //This Displays The Selected Product
+    console.log("this is me getting explanation: " + this.selectedProduct.explanation) //This Displays The Selected Product
     console.log("meaning is: " + this.simplified)
     this.stepper.selectedIndex = this.stepper.steps.length - 1; // Move to the selected product step
     this.select = true
@@ -74,11 +77,19 @@ export class SurveyComponent implements OnInit {
         .getMeaningOfWord(this.selectedProduct.title)
         .toPromise();
       this.simplified = response.explanation;
+      this.prodName = this.selectedProduct.title
       console.log("from async word: " + this.simplified)
       this.select = true
     } catch (error) {
       console.error('Error fetching the meaning of the word:', error);
     }
+  }
+
+  clearSelect(){
+    this.select = false
+    this.simplified = " "
+    this.prodName = " "
+    this.stepper.selectedIndex = this.stepper.steps.length - 1;
   }
 
   // onSubmit() {
@@ -114,27 +125,27 @@ export class SurveyComponent implements OnInit {
   //   );
   // }
  
-//   DONE() {
-//     this.userAnswers = {
-//       has_dependents: this.secondFormGroup.get('secondCtrl')?.value === 'true',
-//       planning_for_child_education: this.fifthFormGroup.get('fifthCtrl')?.value === 'true',
-//       physically_demanding_job: this.firstFormGroup.get('firstCtrl')?.value === 'true',
-//       specific_financial_goals: this.forthFormGroup.get('forthCtrl')?.value === 'true',
-//       retirement_plan_with_tax_benefits: this.thirdFormGroup.get('thirdCtrl')?.value === 'true',
-//     };
+  DONE() {
+    this.userAnswers = {
+      has_dependents: this.secondFormGroup.get('secondCtrl')?.value === 'true',
+      planning_for_child_education: this.fifthFormGroup.get('fifthCtrl')?.value === 'true',
+      physically_demanding_job: this.firstFormGroup.get('firstCtrl')?.value === 'true',
+      specific_financial_goals: this.forthFormGroup.get('forthCtrl')?.value === 'true',
+      retirement_plan_with_tax_benefits: this.thirdFormGroup.get('thirdCtrl')?.value === 'true',
+    };
   
-//     this.gptservice.getRecommendations(this.userAnswers).subscribe(
-//       (data) => {
-//         this.recommendations = data.recommendedProducts;
-//         console.log(this.recommendations);
-//         console.log('this is returning something');
-//         console.log(this.userAnswers);
-//       },
-//       (error) => {
-//         console.error('Error fetching recommendations:', error);
-//       }
-//     )
+    this.gptservice.getRecommendations(this.userAnswers).subscribe(
+      (data) => {
+        this.recommendations = data.recommendedProducts;
+        console.log(this.recommendations);
+        console.log('this is returning something');
+        console.log(this.userAnswers);
+      },
+      (error) => {
+        console.error('Error fetching recommendations:', error);
+      }
+    )
 
-// }
+}
 
 }
