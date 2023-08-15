@@ -92,39 +92,6 @@ export class SurveyComponent implements OnInit {
     this.stepper.selectedIndex = this.stepper.steps.length - 1;
   }
 
-  // onSubmit() {
-  //   this.getMeaningOfWord();
-  // }
-  // onSubmit() {
-  //   this.gptservice
-  //     .getRecommendations(this.userAnswers)
-  //     .subscribe(
-  //       (data) => {
-  //         this.recommendations = data.recommendedProducts;
-  //         console.log(this.recommendations)
-  //       },
-  //       (error) => {
-  //         console.error('Error fetching recommendations:', error);
-  //       }
-  //     );
-  // }
-
-  // DONE(){
-  //   this.gptservice
-  //   .getRecommendations(this.userAnswers)
-  //   .subscribe(
-  //     (data) => {
-  //       this.recommendations = data.recommendedProducts;
-  //       console.log(this.recommendations)
-  //       console.log("this is retuning something")
-  //       console.log(this.userAnswers)
-  //     },
-  //     (error) => {
-  //       console.error('Error fetching recommendations:', error);
-  //     }
-  //   );
-  // }
- 
   DONE() {
     this.userAnswers = {
       has_dependents: this.secondFormGroup.get('secondCtrl')?.value === 'true',
