@@ -1,130 +1,83 @@
-#device-bg{
-    background-color: #F6F6F6;
+#device-bg {
+  background-color: #f6f6f6;
 }
 
-
 @media (max-width: 640px) {
-    #frm-cont {
-        background-color: #F6F6F6 ;
-        border: none;
-      height: 92vh;
-    }
+  #frm-cont {
+    background-color: #f6f6f6;
+    border: none;
+    height: 92vh;
+  }
+  #frm {
+    margin-top: 4rem;
   }
 
-  @media (max-width: 640px) {
-    #frm {
-        margin-top: 4rem;
-    }
+  #namesfrm input {
+    width: 9rem;
   }
 
-
-  @media (max-width: 640px) {
-    #namesfrm input {
-        width: 9rem;
-    }
+  #reg-btn {
+    margin-left: 70px;
+    margin-top: 1.5rem;
+    width: 10rem;
+    height: 2.8rem;
   }
 
-
-  #google-btn{
-    border-radius: 20px;
-    border: 1px solid #000;
-    background: rgba(255, 255, 255, 0.00);
-    height: 2rem;
+  #google-btn {
     width: 15rem;
-    margin-left: 4.7rem;
-    margin-top: 6px;
+    height: 2rem;
+    margin-left: 30px;
   }
 
-  #frm input{
-    background-color: white;
-    border-style: solid;
-    border-radius: 1rem;
+  #logo {
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    margin-top: 1.5rem;
   }
-#reg-btn{
-   
-border-radius: 25px;
-background: #FF5C53;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-@media (max-width: 640px) {
-    #reg-btn {
-        margin-left: 70px;
-        margin-top: 1.5rem;
-        width: 10rem;
-        height: 2.8rem;
-    }
+#google-btn {
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: rgba(255, 255, 255, 0);
+  height: 2rem;
+  width: 15rem;
+  margin-left: 4.7rem;
+  margin-top: 6px;
+}
+
+#frm input {
+  background-color: white;
+  border-style: solid;
+  border-radius: 1rem;
+}
+#reg-btn {
+  border-radius: 25px;
+  background: #ff5c53;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#google-btn img {
+  position: relative;
+  top: -0.22rem;
+}
+
+#google-btn h3 {
+  position: relative;
+  top: -1.5rem;
+}
+
+.alert {
+  color: red;
+}
+
+#logo {
+  justify-content: center;
+}
+
+.welcome {
+  h1 {
+    text-align: center;
+    font-size: 1.7rem;
   }
-
-  @media (max-width: 640px) {
-    #google-btn{
-       width: 15rem;
-       height: 2rem;
-       margin-left: 30px;
-    }
-  }
-  @media (max-width: 640px) {
-    #logo{
-       justify-content: center;
-       margin-bottom: 2.5rem;
-       margin-top: 1.5rem;
-    }
-  }
-
-  
-  #google-btn img{
-    position: relative;
-    top: -0.22rem;
-  }
-
-  #google-btn h3{
-    position: relative;
-    top: -1.5rem;
-    
-  }
-
-  .alert{
-    color: red;
-         }
-
-         #logo{
-          justify-content: center;}
-
-
-          .welcome{
-            //    display: block;
-            //   margin-left: 28%;
-            
-              h1{
-                text-align: center;
-                font-size: 1.7rem;
-              }
-          
-            }
-
-            // .circle-container {
-            //   position: fixed;
-            //   top: 0;
-            //   left: 0;
-            //   width: 100%;
-            //   height: 100%;
-            //   z-index: -1;
-            // }
-            
-            // .circle {
-            //   position: absolute;
-            //   width: 230px;
-            //   height: 230px;
-            //   background-color: #f0d1cf; /* Change the color as per your requirement */
-            //   border-radius: 50%;
-            // }
-            
-            // .circle-top-right {
-            //   top: -125px;
-            //   right: -80px;
-            // }
-            
-            // .circle-bottom-left {
-            //   bottom: -110px;
-            //   left: -80px;
-            // }
+}

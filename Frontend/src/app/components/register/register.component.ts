@@ -5,7 +5,7 @@ import { UserauthService } from 'src/app/services/userauth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
   form: any = {
@@ -13,46 +13,45 @@ export class RegisterComponent implements OnInit {
     lastName: null,
     email: null,
     password: null,
-    confirmPassword: null
+    confirmPassword: null,
   };
 
-  
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
   roles: string[] = [];
-  // isLoggedIn = false;
-  // isLoginFailed = false;
-  constructor( private userauth: UserauthService, private tokenStorage: TokenStorageService) { }
 
-  ngOnInit(): void { if (this.tokenStorage.getToken()) {
-    this.isSuccessful = true;
-    this.roles = this.tokenStorage.getUser().roles;
-  }
-}
+  constructor(
+    private userauth: UserauthService,
+    private tokenStorage: TokenStorageService
+  ) {}
 
-onSubmit(): void {
-  const {firstName, lastName, email, password, confirmPassword } = this.form;
-  //This Method That Returns An Observable Object (authService.register())
-  this.userauth.register(firstName, lastName, email, password, confirmPassword).subscribe({
-    next: (data) => {
-      console.log(data);
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
       this.isSuccessful = true;
-      this.isSignUpFailed = false;
-      // this.reloadPage();
-      // this.toastr.success("Registration Was Successful")
-      //added auto login
-      this.tokenStorage.saveToken(data.accessToken);
-      this.tokenStorage.saveUser(data);
       this.roles = this.tokenStorage.getUser().roles;
-      window.location.replace("/regwelcome")
-    },
-    error: (err) => {
-      this.errorMessage = err.error.message;
-      this.isSignUpFailed = true;
-      //this.toastr.error("Registration Failed, Try Again")
     }
-  });
-}
+  }
 
+  onSubmit(): void {
+    const { firstName, lastName, email, password, confirmPassword } = this.form;
+    //This Method That Returns An Observable Object (authService.register())
+    this.userauth
+      .register(firstName, lastName, email, password, confirmPassword)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.isSuccessful = true;
+          this.isSignUpFailed = false;
+          this.tokenStorage.saveToken(data.accessToken);
+          this.tokenStorage.saveUser(data);
+          this.roles = this.tokenStorage.getUser().roles;
+          window.location.replace('/regwelcome');
+        },
+        error: (err) => {
+          this.errorMessage = err.error.message;
+          this.isSignUpFailed = true;
+        },
+      });
+  }
 }

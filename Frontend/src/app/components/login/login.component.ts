@@ -41,9 +41,7 @@ export class LoginComponent implements OnInit {
         this.roles = this.tokenstorage.getUser().roles;
         const accessToken = data.accessToken
         this.userauth.storeAccessToken(accessToken)
-        //alert("Login Successful")
         this.reloadPage();
-        //this.toastr.success("Login Successful")
         
        window.location.replace("/dashboard")
       //return this.isLoggedIn = true
@@ -53,8 +51,6 @@ export class LoginComponent implements OnInit {
       error: (err) => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
-        //this.toastr.error("Login Failed, Try Again")
-       
         Swal.fire({
           title: 'User Not Found',
            text: 'Please try again!',
