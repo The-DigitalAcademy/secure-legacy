@@ -49,6 +49,8 @@ export class SurveyComponent implements OnInit {
   select = false
   prodName: string = ''
   selectedProduct: any; // To store the selected product
+  chosenProd: any;
+  redirectURL: any
   // selectedProductFormGroup: FormGroup = this._formBuilder.group({}); // Initialize FormGroup for the selected product st // FormGroup for the selected product step
   @ViewChild('stepper') stepper!: MatStepper;
 
@@ -114,5 +116,37 @@ export class SurveyComponent implements OnInit {
     )
 
 }
+
+getThisProduct(title: any){
+  this.chosenProd = this.selectedProduct.title
+  
+  if (this.chosenProd == "Life Cover"){
+    this.redirectURL = 'https://www.absa.co.za/personal/insure/my-life/explore/'
+  }
+
+  if (this.chosenProd == "Disability Cover"){
+    this.redirectURL = 'https://www.absa.co.za/personal/insure/my-life/instant-life/'
+  }
+
+  if (this.chosenProd == "Retirement Cover"){
+    this.redirectURL = 'https://www.absa.co.za/personal/save-invest/products/absa-retirement-annuity/'
+  }
+
+  if (this.chosenProd == "Educational Trust"){
+    this.redirectURL = 'https://www.absa.co.za/personal/save-invest/products/absa-fundisa-fund/'
+  }
+
+  if (this.chosenProd == "Investments"){
+    this.redirectURL = 'https://www.absa.co.za/personal/save-invest/products/'
+  }
+
+  window.location.replace(this.redirectURL)
+  console.log("This returns the chosen product: " + this.chosenProd)
+  console.log("This returns the external URL: " + this.redirectURL)
+}
+
+
+
+
 
 }

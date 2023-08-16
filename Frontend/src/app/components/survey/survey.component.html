@@ -350,21 +350,29 @@
             </div>
           </div>
           <div *ngIf="select" class="selected">
+            <button class="complete-survey" mat-button (click)="getThisProduct(this.selectedProduct.title)" >
+              Get This Product
+            </button>
+            <button mat-button (click)="clearSelect()">Back</button>
             <h2>{{ this.selectedProduct.title }}</h2>
             <h3>{{ this.selectedProduct.explanation }}</h3>
+            <br>
+            <button class="complete-survey" mat-button (click)="getThisProduct(this.selectedProduct.title)" >
+              Get This Product
+            </button>
             <button mat-button (click)="clearSelect()">Back</button>
           </div>
 
           <input matInput />
         </mat-form-field>
-        <div class="btns">
+        <!-- <div class="btns">
           <div class="btn-back">
             <button mat-button matStepperPrevious>Back</button>
           </div>
           <div class="btn-next">
             <button mat-button matStepperNext type="submit">Next</button>
           </div>
-        </div>
+        </div> -->
       </form>
     </mat-step>
 
