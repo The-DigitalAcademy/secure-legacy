@@ -140,7 +140,12 @@ getThisProduct(title: any){
     this.redirectURL = 'https://www.absa.co.za/personal/save-invest/products/'
   }
 
-  window.location.replace(this.redirectURL)
+  const newWindow: Window | null = window.open("", "_blank");
+if (newWindow) {
+    newWindow.location.replace(this.redirectURL);
+}
+
+  // window.location.replace(this.redirectURL)
   console.log("This returns the chosen product: " + this.chosenProd)
   console.log("This returns the external URL: " + this.redirectURL)
 }
