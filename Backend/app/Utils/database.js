@@ -57,6 +57,7 @@ const sequelize = new Sequelize('dblegacy', 'dblegacy_user', 'dEDpEQAd8CXO2rPDCe
   dialect: 'postgres',
     dialectOptions: {
     ssl: true, // Enable SSL/TLS
+    
   },
 });
 

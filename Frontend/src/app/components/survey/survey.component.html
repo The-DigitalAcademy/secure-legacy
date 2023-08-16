@@ -350,9 +350,11 @@
             </div>
           </div>
           <div *ngIf="select" class="selected">
-            <button class="complete-survey" mat-button (click)="getThisProduct(this.selectedProduct.title)" >
+            <!-- <button class="complete-survey" mat-button (click)="getThisProduct(this.selectedProduct.title)" >
               Get This Product
-            </button>
+            </button> -->
+            <br>
+            <br>
             <div class="mybackbtn">
               <button mat-button (click)="clearSelect()"><img width="24" height="24" src="https://img.icons8.com/plumpy/24/000000/back--v1.png" alt="back--v1"/></button>
             </div>
@@ -363,7 +365,7 @@
             <button class="complete-survey" mat-button (click)="getThisProduct(this.selectedProduct.title)" >
               Get This Product
             </button>
-            <button mat-button (click)="clearSelect()">Back</button>
+            <!-- <button mat-button (click)="clearSelect()">Back</button> -->
           </div>
 
           <input matInput />
