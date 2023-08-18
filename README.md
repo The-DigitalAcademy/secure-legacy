@@ -1,4 +1,4 @@
-# Secure Legacy Insurance Recommendations
+# Secure Legacy 
 
 Secure Legacy Insurance Recommendations is a web application that leverages artificial intelligence (AI) to provide tailored insurance recommendations for wealth management. The application is built with a modern tech stack including Angular for the frontend, Node.js with Express.js for the backend, and utilizes PostgreSQL as the database. The user interface is styled using Tailwind CSS. The entire project is managed on GitHub for seamless collaboration.
 
