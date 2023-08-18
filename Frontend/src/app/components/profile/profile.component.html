@@ -1,1 +1,150 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar> -->
+<!-- <app-navbar></app-navbar> -->
+<!-- app.component.html -->
+
+<!-- Navbar -->
+<nav > <!-- Updated color class to "bg-red-500" -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="profile-nav">
+        <div routerLink="/dashboard">
+            <img width="30" height="30" src="https://img.icons8.com/ios/50/FFFFFF/back--v1.png" alt="back--v1"/>
+        </div>
+     
+      <div class="flex items-center justify-center h-16">
+      <h1 class="profile">PROFILE</h1> 
+      </div>
+    </div>
+    
+    
+  </nav>
+  
+  
+  
+  
+  <body class="antialiased text-gray-900 px-6">
+    
+   
+      <div class="antialiased text-gray-900 px-6">
+        <div class="max-w-xl mx-auto py-12 md:max-w-4xl">
+          <!-- <h1 class="text-2xl font-bold">Hello Bosele</h1>
+          <p class="mt-2 text-lg text-gray-500">
+            Welcome to your profile! 
+          </p> -->
+          <div class = "welcome">
+  
+            <img class="w-10 h-10 mr-4" src="https://img.icons8.com/?size=512&id=33100&format=png" alt=""><h2 class="text-3xl font-bold mb-4"> Hello, {{ currentUser.user.firstName }} {{ currentUser.user.lastName }}!</h2>
+             </div>
+  
+        <form (ngSubmit)="updateProfile()">     
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <div class="grid grid-cols-1 gap-6">
+              <label class="block">
+                <span class="text-gray-700">First Name</span>
+                <input
+                  type="text"
+                  class="form-input mt-1 block w-full"
+                  [(ngModel)]="form.firstName"
+                  name="firstName"
+                  required
+                />
+              </label>
+              <label class="block">
+                <span class="text-gray-700">Last Name</span>
+                <input
+                  type="email"
+                  class="form-input mt-1 block w-full"
+                  [(ngModel)]="form.lastName"
+                  name="lastName"
+                  required
+                />
+              </label>
+              <label class="block">
+                <span class="text-gray-700">Email Address</span>
+                <input
+                  type="email"
+                  multiple
+                  class="form-input mt-1 block w-full"
+                  [(ngModel)]="form.email"
+                  name="email"
+                  required
+                />
+              </label>
+             
+              <label class="block">
+                <span class="text-gray-700">Date of Birth</span>
+                <input type="date" class="form-input mt-1 block w-full" 
+                [(ngModel)]="form.dob"
+                  name="dob"
+                  required/>
+              </label>
+             
+              <label class="block">
+                <span class="text-gray-700">Occupation</span>
+                <input
+                  type="email"
+                  class="form-input mt-1 block w-full"
+                  [(ngModel)]="form.occupation"
+                  name="occupation"
+                  required
+                  >
+              </label>
+             
+            </div>
+            <div class="grid grid-cols-1 gap-6">
+              <label class="block">
+                <span class="text-gray-700">Phone Number</span>
+                <input
+                  type="tel"
+                  multiple
+                  class="form-input mt-1 block w-full"
+                  [(ngModel)]="form.phoneNo"
+                  name="phoneNo"
+                  required
+                />
+              </label>
+             
+  
+              <label class="block">
+                  <span class="text-gray-700">Gender</span>
+                  <select class="form-select block w-full mt-1" [(ngModel)]="form.gender" name="gender" required>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Prefer not to say</option>
+                  </select>
+                </label>
+  
+              <label class="block">
+                <span class="text-gray-700">Marital Status</span>
+                <select class="form-select block w-full mt-1" [(ngModel)]="form.maritalStatus" name="maritalStatus" required>
+                  <option>Single</option>
+                  <option>Married</option>
+                  <option>Widow</option>
+                  <option>Divorced</option>
+                  
+                </select>
+              </label>
+  
+              <label class="block">
+                  <span class="text-gray-700">Dependents</span>
+                  <input
+                    type="text"
+                    class="form-input mt-1 block w-full"
+                    [(ngModel)]="form.dependents"
+                  name="dependents"
+                  required
+                  />
+              </label>
+         
+            </div>
+            <div class="button">
+              <button class="btn btn-continue" type="submit">
+                <div class="continue">Save</div>
+              </button>
+            </div>
+       
+          </div>
+        </form>
+        </div>
+       
+      </div>
+    
+    </body>

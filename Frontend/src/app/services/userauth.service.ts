@@ -61,4 +61,23 @@ export class UserauthService {
     window.location.replace("/landing") // Redirect to login page after logout
   }
 
+  profile(firstName: string, lastName: string, email: string, phoneNo: string, gender: string, maritalStatus: string, dob: string, dependents: string, occupation: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+  
+    return this.http.post(AUTH_API + 'auth/profile', {
+      firstName,
+      lastName,
+      email,
+      phoneNo,
+      gender,
+      maritalStatus,
+      dob,
+      dependents,
+      occupation
+    }, httpOptions);
+  }
+
+
 }

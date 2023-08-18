@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
           this.tokenStorage.saveToken(data.accessToken);
           this.tokenStorage.saveUser(data);
           this.roles = this.tokenStorage.getUser().roles;
-          window.location.replace('/regwelcome');
+          window.location.replace('/welcome');
         },
         error: (err) => {
           this.errorMessage = err.error.message;
