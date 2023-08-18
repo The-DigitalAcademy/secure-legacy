@@ -48,10 +48,14 @@
     width : 80px;
     height: 45px;
     
-    
 
     
     
+}
+
+.button{
+    text-align: right;
+    margin-right: 2rem;
 }
 
 .continue{
@@ -61,4 +65,10 @@
 
 .about-section img{
     width: 10rem;
+}
+
+.hand img{
+    position: relative;
+    left: 10.5rem;
+    top: -1.9rem;
 }
