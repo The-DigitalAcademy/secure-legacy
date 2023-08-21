@@ -33,11 +33,30 @@
         #reg-btn {
             justify-content: center;
             margin-top: 2.8rem;
-            width: 12rem;
-            height: 2rem;
-            margin-left: 6rem;
+            width: 16rem;
+            height: 3rem;
+            margin-left: 4rem;
             margin-bottom: -5rem;
+          
+            button{
+              padding-top: 1rem;
+              font-size: 1.3rem;
+            }
         }
+
+        footer {
+          background-color: #FF5C53;
+          text-align: left;
+          margin-top: -18rem;
+          position: inherit;
+          height: 25rem;
+          width: 100%;
+          bottom: 0;
+          p{
+            word-spacing: 2px;
+          }
+      }
+
       }
     
     //   @media (max-width: 640px) {
@@ -62,9 +81,9 @@
       footer{
         background-color: #FF5C53;
         text-align: left;
-        // position: fixed;
-        margin-top: -13rem;
+        margin-top: -18rem;
         position: inherit;
+        height: 25rem;
         width: 100%;
         bottom: 0;
       }
