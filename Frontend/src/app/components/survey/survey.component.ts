@@ -71,6 +71,7 @@ export class SurveyComponent implements OnInit {
     this.selectedProductFormGroup = this._formBuilder.group({});
     this.currentUser = this.tokenStorageService.getUser()
     console.log(this.currentUser)
+    this.loadUserAnswers()
   }
 
   selectProduct(product: any) {
@@ -111,6 +112,7 @@ export class SurveyComponent implements OnInit {
     setTimeout(() => {
       if (this.loading) {
         this.loadingTimeout = true; // Loading took too long
+        window.location.replace('/dashboard')
       }
     }, 60000);
   
@@ -131,6 +133,7 @@ export class SurveyComponent implements OnInit {
         console.log(this.userAnswers);
         this.loading = false;
         this.loadingTimeout = false;
+        this.saveUserAnswers()
       },
       (error) => {
         console.error('Error fetching recommendations:', error);
@@ -175,6 +178,24 @@ if (newWindow) {
 }
 
 
+saveUserAnswers() {
+  if (this.currentUser) {
+    const userAnswersKey = `user_answers_${this.currentUser.id}`; // Use a unique key based on user ID
+    localStorage.setItem(userAnswersKey, JSON.stringify(this.userAnswers));
+    
+  }
+}
+
+loadUserAnswers() {
+  if (this.currentUser) {
+    const userAnswersKey = `user_answers_${this.currentUser.id}`;
+    const savedAnswers = localStorage.getItem(userAnswersKey);
+    if (savedAnswers) {
+      this.userAnswers = JSON.parse(savedAnswers);
+      console.log('Loaded user answers (session):', this.userAnswers);
+    }
+  }
+}
 
 
 

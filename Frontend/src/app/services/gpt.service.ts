@@ -6,8 +6,13 @@ import { Observable } from 'rxjs';
 })
 export class GptService {
   //Use this to Test AI Latest Backend
-  private apiUrl = 'http://localhost:3000/api/recommendations';
-  private apiUrl2 = 'http://localhost:3000/api'
+  // private apiUrl = 'http://localhost:3000/api/recommendations';
+  // private apiUrl2 = 'http://localhost:3000/api'
+
+  private apiUrl = 'https://legacyserver.onrender.com/api/recommendations';
+  private apiUrl2 = 'https://legacyserver.onrender.com/api'
+
+  // https://legacyserver.onrender.com/
   constructor(private http: HttpClient) {}
 
   getRecommendations(answers: any) {

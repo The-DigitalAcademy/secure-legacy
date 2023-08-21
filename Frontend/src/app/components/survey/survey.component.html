@@ -274,9 +274,10 @@
         <ng-template matStepLabel>Done</ng-template>
         <div *ngIf="loading" class="loader-container">
           <mat-spinner diameter="90" class="custom-loader" color="warn" ></mat-spinner>
+          <h4 style="margin-left: 0.8rem; margin-top: 2rem;">Please Wait</h4>
         </div>
         <div *ngIf="loadingTimeout" class="error-message">
-          Please try again later.
+          Failed, Please try again later.
         </div>
         <div *ngIf="!loading" >
         <div class="Complete-image">

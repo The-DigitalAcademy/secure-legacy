@@ -28,6 +28,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
+import { ViewResultsComponent } from './components/view-results/view-results.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import {MatCardModule} from '@angular/material/card';
     NavbarComponent,
     RegistrationWelcomeComponent,
     SurveyComponent,
-    LearnbonusComponent
+    LearnbonusComponent,
+    ViewResultsComponent
   ],
   imports: [
     BrowserModule,

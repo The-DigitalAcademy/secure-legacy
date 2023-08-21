@@ -9,6 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegistrationWelcomeComponent } from './components/registration-welcome/registration-welcome.component';
 import { SurveyComponent } from './components/survey/survey.component';
 import { LearnbonusComponent } from './components/learnbonus/learnbonus.component';
+import { ViewResultsComponent } from './components/view-results/view-results.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'welcome', component: RegistrationWelcomeComponent },
   { path: 'survey', component: SurveyComponent },
   { path: 'learn', component: LearnbonusComponent },
-
+  { path: 'view', component: ViewResultsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

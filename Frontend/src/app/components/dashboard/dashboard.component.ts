@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { ViewResultsComponent } from '../view-results/view-results.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,8 +25,21 @@ export class DashboardComponent implements OnInit {
     //   const user = this.tokenStorageService.getUser();
     //   this.currentUser = this.tokenStorageService.getUser()
     //   this.email = user.email;
-      
+    this.childComponent.ViewProd()
     // }
+  }
+
+  @ViewChild(ViewResultsComponent) childComponent!: ViewResultsComponent;
+
+  ngAfterViewInit(): void {
+
+    if (this.childComponent) {
+      this.childComponent.ViewProd();
+    }
+  }
+
+  select(){
+    this.childComponent.ViewProd();
   }
 
 }

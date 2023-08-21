@@ -176,6 +176,11 @@
       margin-left: 70px;
     }
 
+    .mat-horizontal-stepper-header-container {
+      white-space: nowrap;
+      display: none;
+      align-items: center;
+  }
     
   }
 }
