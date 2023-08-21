@@ -46,7 +46,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Import the recommendations controller
-const { getRecommendations, getProducts, getMeaningOfWord } = require('./app/Controllers/gpt.js');
+const { getRecommendations, getProducts, getMeaningOfWord } = require('./app/Controllers/gpt');
 app.post('/api/products', getProducts);
 // API route for recommendations
 app.post('/api/recommendations', getRecommendations);
