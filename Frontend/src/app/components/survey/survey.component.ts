@@ -2,6 +2,7 @@ import { Component, OnInit,  ViewChild } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { GptService } from 'src/app/services/gpt.service';
 import { MatStepper } from '@angular/material/stepper'; 
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
@@ -35,6 +36,13 @@ export class SurveyComponent implements OnInit {
   isLinear = true;
   hidden = true;
 
+  isLoggedIn = false;
+  username?: string;
+  email?: string;
+  currentUser: any;
+  loading = false;
+  loadingTimeout = false; 
+
   userAnswers = {
     has_dependents: false,
     planning_for_child_education: false,
@@ -51,15 +59,18 @@ export class SurveyComponent implements OnInit {
   selectedProduct: any; // To store the selected product
   chosenProd: any;
   redirectURL: any
+  
   // selectedProductFormGroup: FormGroup = this._formBuilder.group({}); // Initialize FormGroup for the selected product st // FormGroup for the selected product step
   @ViewChild('stepper') stepper!: MatStepper;
 
-  constructor(private _formBuilder: FormBuilder, private gptservice: GptService) {}
+  constructor(private _formBuilder: FormBuilder, private gptservice: GptService, private tokenStorageService: TokenStorageService) {}
 
 
   ngOnInit(): void {
     console.log(this.firstFormGroup)
     this.selectedProductFormGroup = this._formBuilder.group({});
+    this.currentUser = this.tokenStorageService.getUser()
+    console.log(this.currentUser)
   }
 
   selectProduct(product: any) {
@@ -95,6 +106,15 @@ export class SurveyComponent implements OnInit {
   }
 
   DONE() {
+    this.loading = true;
+
+    setTimeout(() => {
+      if (this.loading) {
+        this.loadingTimeout = true; // Loading took too long
+      }
+    }, 60000);
+  
+
     this.userAnswers = {
       has_dependents: this.secondFormGroup.get('secondCtrl')?.value === 'true',
       planning_for_child_education: this.fifthFormGroup.get('fifthCtrl')?.value === 'true',
@@ -109,9 +129,13 @@ export class SurveyComponent implements OnInit {
         console.log(this.recommendations);
         console.log('this is returning something');
         console.log(this.userAnswers);
+        this.loading = false;
+        this.loadingTimeout = false;
       },
       (error) => {
         console.error('Error fetching recommendations:', error);
+        this.loading = false;
+        this.loadingTimeout = false;
       }
     )
 

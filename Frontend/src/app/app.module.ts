@@ -25,8 +25,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
-
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +56,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatInputModule,
     HttpClientModule,
     AppRoutingModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatCardModule,
     BrowserAnimationsModule
   ],
   providers: [],

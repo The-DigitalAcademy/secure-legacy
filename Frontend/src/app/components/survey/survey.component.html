@@ -35,14 +35,14 @@
             required
           >
             <mat-radio-button
-              [(ngModel)]="userAnswers.physically_demanding_job"
+             
               name="physically_demanding_job"
               value="true"
               >Yes</mat-radio-button
             >
             <br />
             <mat-radio-button
-              [(ngModel)]="userAnswers.physically_demanding_job"
+              
               name="physically_demanding_job"
               value="false"
               >No</mat-radio-button
@@ -70,11 +70,11 @@
           </div>
           <div class="info-text">
             <h4>
-              Life cover is a policy that offers a lump-sum payout to your family upon your death, providing them with financial security and peace of mind during challenging times.
+              Life cover is a policy that offers a lump-sum payout to your family and dependents upon your death, providing them with financial security and peace of mind during challenging and stressful times.
             </h4>
             <h2>
               <b
-                >Do you have dependents who rely on your financial support?</b
+                >Do you have any dependents who rely soley on your financial support?</b
               >
             </h2>
           </div>
@@ -84,14 +84,14 @@
             required
           >
             <mat-radio-button
-              [(ngModel)]="userAnswers.has_dependents"
+             
               name="has_dependents"
               value="true"
               >Yes</mat-radio-button
             >
             <br />
             <mat-radio-button
-              [(ngModel)]="userAnswers.has_dependents"
+             
               name="has_dependents"
               value="false"
               >No</mat-radio-button
@@ -134,14 +134,14 @@
             required
           >
             <mat-radio-button
-              [(ngModel)]="userAnswers.retirement_plan_with_tax_benefits"
+              
               name="retirement_plan_with_tax_benefits"
               value="true"
               >Yes</mat-radio-button
             >
             <br />
             <mat-radio-button
-              [(ngModel)]="userAnswers.retirement_plan_with_tax_benefits"
+             
               name="retirement_plan_with_tax_benefits"
               value="false"
               >No</mat-radio-button
@@ -186,14 +186,14 @@
             required
           >
             <mat-radio-button
-              [(ngModel)]="userAnswers.specific_financial_goals"
+              
               name="specific_financial_goals"
               value="true"
               >Yes</mat-radio-button
             >
             <br />
             <mat-radio-button
-              [(ngModel)]="userAnswers.specific_financial_goals"
+              
               name="specific_financial_goals"
               value="false"
               >No</mat-radio-button
@@ -236,14 +236,14 @@
             required
           >
             <mat-radio-button
-              [(ngModel)]="userAnswers.planning_for_child_education"
+             
               name="planning_for_child_education"
               value="true"
               >Yes</mat-radio-button
             >
             <br />
             <mat-radio-button
-              [(ngModel)]="userAnswers.planning_for_child_education"
+              
               name="planning_for_child_education"
               value="false"
               >No</mat-radio-button
@@ -261,20 +261,31 @@
             </button>
           </div>
         </div>
+        <div *ngIf="loading" class="loader-container">
+          <mat-spinner diameter="30"></mat-spinner>
+        </div>
       </form>
+     
     </mat-step>
 
     <!-- 6 View Recommendations -->
     <mat-step>
       <div class="finalCard">
         <ng-template matStepLabel>Done</ng-template>
+        <div *ngIf="loading" class="loader-container">
+          <mat-spinner diameter="90" class="custom-loader" color="warn" ></mat-spinner>
+        </div>
+        <div *ngIf="loadingTimeout" class="error-message">
+          Please try again later.
+        </div>
+        <div *ngIf="!loading" >
         <div class="Complete-image">
           <img
             src="https://cdn.discordapp.com/attachments/1118162261240971307/1136623096275685417/flame-1837.png"
           />
         </div>
         <div class="Complete-Page">
-          <h1>Baie Dankie, Bosele!</h1>
+          <h1>Baie Dankie, {{this.currentUser.user.firstName}}!</h1>
           <h2>
             High five for learning with our app! Take a look at the personalized
             recommendations
@@ -286,6 +297,7 @@
         <div class="retake">
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="stepper.reset()">Retake Survey</button>
+        </div>
         </div>
       </div>
     </mat-step>
@@ -341,6 +353,9 @@
           </div>
 
           <input matInput />
+          <div *ngIf="loading" class="loader-container">
+            <mat-spinner diameter="30"></mat-spinner>
+          </div>
         </mat-form-field>
         <!-- <div class="btns">
           <div class="btn-back">
@@ -351,6 +366,7 @@
           </div>
         </div> -->
       </form>
+      
     </mat-step>
 
     <!-- 8 If No Recommendations Generated -->

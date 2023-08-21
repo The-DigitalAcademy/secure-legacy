@@ -10,6 +10,11 @@
       display: none;
     }
 
+    mat-spinner{
+      color: #ff5c53;
+      
+    }
+
     .firstCard {
       margin-top: 2rem;
     }
@@ -177,4 +182,21 @@
 
 .firstCard {
   width: 342px;
+}
+
+.loader-container{
+  margin-top: 20rem;
+  margin-left: 8rem;
+  color: #ff5c53; 
+}
+
+
+.custom-loader {
+  color: #ff5c53; 
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  margin-left: 7rem;
 }
