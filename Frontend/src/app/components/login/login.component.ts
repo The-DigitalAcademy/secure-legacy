@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         this.roles = this.tokenstorage.getUser().roles;
         const accessToken = data.accessToken
         this.userauth.storeAccessToken(accessToken)
-        this.reloadPage();
+        // this.reloadPage();
         const snackBarRef = this._snackBar.open('Login successful!', 'OK', {
           verticalPosition: 'bottom',
           panelClass: 'success-snackbar', 
