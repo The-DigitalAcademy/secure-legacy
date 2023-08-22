@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
     //   const user = this.tokenStorageService.getUser();
     //   this.currentUser = this.tokenStorageService.getUser()
     //   this.email = user.email;
-    this.childComponent.ViewProd()
+    // this.childComponent.ViewProd()
     // }
   }
 
