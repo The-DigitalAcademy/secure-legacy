@@ -2,26 +2,29 @@
 
     display: flex;
     // background-color: antiquewhite;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     // border-radius: 20px;
-    padding: 6px 0px;
+    padding: 0px 0px;
     border-radius: 38px;
     background: #FFF;
-    box-shadow: 0px 4.400000095367432px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4.400000095367432px 4px 0px rgba(211, 208, 208, 0.25);
+    
 
     img{
         // left: 100%;
         // top:145%;
-        margin-top: 2rem;
-        margin-left: 2rem;
+        margin-top: 0.6rem;
+        margin-left: 1.5rem;
         
     }
     
     h2{
     font-size: 20px;
-    margin-top: 2rem; 
+    margin-top: 1rem; 
     margin-right: .5rem;  
     }
+
+   
 }
 
 .about-section{
@@ -71,4 +74,9 @@
     position: relative;
     left: 10.5rem;
     top: -1.9rem;
+}
+
+.welcome {
+    border: solid 1px;
+    border-color: black;
 }
