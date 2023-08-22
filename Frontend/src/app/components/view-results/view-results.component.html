@@ -1,0 +1,89 @@
+<app-navbar></app-navbar>
+<div *ngIf="loading" class="loader-container">
+    <mat-spinner diameter="90" class="custom-loader" color="warn" ></mat-spinner>
+    <h4 style="margin-left: -4.8rem; margin-top: 2rem;">Please wait, still retrieving your data.</h4>
+  </div>
+  <div *ngIf="loadingTimeout" class="error-message">
+    Failed, Please try again later.
+  </div>
+  <div *ngIf="!loading" >
+<mat-stepper
+  [linear]="isLinear"
+  #stepper
+  class="custom-stepper"
+  class="questionForm"
+>
+
+<mat-step
+[stepControl]="sixthFormGroup"
+label="Fill out your address"
+*ngIf="recommendations.length > 0"
+>
+
+<form [formGroup]="sixthFormGroup">
+   
+  <mat-form-field class="firstCard">
+ 
+    <div *ngIf="!select">
+      <div class="info-text" *ngFor="let product of recommendations">
+        <a
+          class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
+          style="background-color: #ff5c53"
+        >
+          <h1
+            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          >
+            {{ product.title }}
+          </h1>
+          <p
+            class="font-normal text-gray-700 dark:text-white"
+            id="view-prod"
+            (click)="selectProduct(product)"
+            matStepperNext
+          >
+            View This Product
+          </p>
+        </a>
+        <br />
+      </div>
+    </div>
+    <div *ngIf="select" class="selected">
+      <!-- <button class="complete-survey" mat-button (click)="getThisProduct(this.selectedProduct.title)" >
+        Get This Product
+      </button> -->
+      <br>
+      <br>
+      <div class="mybackbtn">
+        <button mat-button (click)="clearSelect()"><img width="24" height="24" src="https://img.icons8.com/plumpy/24/000000/back--v1.png" alt="back--v1"/></button>
+      </div>
+
+      <h2>{{ this.selectedProduct.title }}</h2>
+      <h3>{{ this.selectedProduct.explanation }}</h3>
+      <br>
+      <button class="complete-survey" mat-button (click)="getThisProduct(this.selectedProduct.title)" >
+        Get This Product
+      </button>
+      <!-- <button mat-button (click)="clearSelect()">Back</button> -->
+    </div>
+
+    <input matInput />
+      
+  </mat-form-field>
+
+  <!-- <div class="btns">
+    <div class="btn-back">
+      <button mat-button matStepperPrevious>Back</button>
+    </div>
+    <div class="btn-next">
+      <button mat-button matStepperNext type="submit">Next</button>
+    </div>
+  </div> -->
+</form>
+
+</mat-step>
+
+
+
+
+</mat-stepper>
+</div>
