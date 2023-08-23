@@ -1,4 +1,6 @@
 
+// Using This For Testing While Waiting For Questions DB 
+
 Questions = [
     ["Please provide me with an insurance product for someone who agrees to all this questions, provide only the name without any other explanation (only 2 word): Do you have dependents (e.g., spouse, children, aging parents) who rely on your financial support? Are you concerned about leaving a financial burden (such as outstanding debts or mortgage) behind for your loved ones if something were to happen to you? Are you the primary breadwinner in your family? Do you want to ensure that your family's lifestyle and future expenses are taken care of in the event of your untimely death? Are you looking for a policy that can provide a lump sum payout or regular income to your beneficiaries? - Recommend Life Cover"],
     ["Please provide me with an insurance product for someone who agrees to all this questions, provide only the name without any other explanation (only 2 word): Are you planning for your child's higher education expenses? Do you want to set aside funds specifically for your child's educational needs? Are you interested in a tax-efficient savings plan that can help grow your money over time to meet future education costs? Would you like the educational trust to be accessible only for educational purposes and not for other expenses? - Recommend Educational Trust"],

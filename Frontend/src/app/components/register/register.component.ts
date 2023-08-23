@@ -58,6 +58,8 @@ export class RegisterComponent implements OnInit {
           snackBarRef.onAction().subscribe(() => {
             window.location.replace('/welcome');
           });
+
+          window.location.replace('/welcome');
         },
         error: (err) => {
           this.errorMessage = err.error.message;
@@ -68,6 +70,8 @@ export class RegisterComponent implements OnInit {
             panelClass: 'error-snackbar', // Add custom CSS class for styling
             duration: 5000 // Duration in milliseconds
           });
+          console.log(this.errorMessage)
+          // window.location.reload()
         },
       });
 
@@ -75,5 +79,8 @@ export class RegisterComponent implements OnInit {
       
   }
 
-  
+  reloadPage(): void {
+    window.location.reload();
+  }
+
 }

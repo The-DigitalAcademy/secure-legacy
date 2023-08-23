@@ -19,14 +19,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.currentUser = this.tokenStorageService.getUser()
     console.log(this.currentUser)
-    // this.isLoggedIn = !!this.tokenStorageService.getToken();
-
-    // if (this.isLoggedIn) {
-    //   const user = this.tokenStorageService.getUser();
-    //   this.currentUser = this.tokenStorageService.getUser()
-    //   this.email = user.email;
-    // this.childComponent.ViewProd()
-    // }
   }
 
   @ViewChild(ViewResultsComponent) childComponent!: ViewResultsComponent;
@@ -40,6 +32,6 @@ export class DashboardComponent implements OnInit {
 
   select(){
     this.childComponent.ViewProd();
-  }
+  } 
 
 }
