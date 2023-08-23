@@ -32,6 +32,6 @@ export class DashboardComponent implements OnInit {
 
   select(){
     this.childComponent.ViewProd();
-  } 
+  }
 
 }
