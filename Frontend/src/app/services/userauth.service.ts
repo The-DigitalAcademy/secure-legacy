@@ -6,10 +6,8 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-const AUTH_API = 'https://secureserver-tbbl.onrender.com/';
+const AUTH_API = 'https://legacyserver.onrender.com/';
 
-//Use this to Test AI Latest Backend
-//const AUTH_API = 'https://localhost:3000/';
 @Injectable({
   providedIn: 'root'
 })

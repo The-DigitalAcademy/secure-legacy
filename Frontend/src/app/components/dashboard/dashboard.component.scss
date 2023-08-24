@@ -1,40 +1,4 @@
-.welcome {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 50px;
-}
 
-.text-xl {
-    color: red;
-    text-align: center;
-    // width: 50px;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-    margin: 0;
-    // margin-top: -10rem;
-}
-
-.card {
-    margin-top: 5rem;
-}
-
-.card h1 {
-    font-size: 2rem;
-}
-
-.w-full {
-    width: 163px;
-}
-
-.text-3xl {
-    font-size: 20px;
-    line-height: 2.25rem;
-}
 
 
 
@@ -64,3 +28,93 @@
 //     bottom: -150px;
 //     left: -30px;
 //   }
+
+
+    @media (max-width: 640px) {
+        .welcome {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+        
+        .text-xl {
+            color: red;
+            text-align: center;
+            // width: 50px;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            margin: 0;
+            // margin-top: -10rem;
+        }
+        
+        .card {
+            margin-top: 5rem;
+        }
+        
+        .card h1 {
+            font-size: 2rem;
+        }
+        
+        .w-full {
+            width: 163px;
+        }
+        
+        .text-3xl {
+            font-size: 20px;
+            line-height: 2.25rem;
+        }
+
+   
+    }
+  
+  
+  @media (min-width: 641px) and (max-width: 768px) {
+   
+     
+  
+  }
+  
+  
+  @media (min-width: 769px) {
+    .object-cover {
+        object-fit: contain;
+    }
+
+    .p-4 {
+        padding: 1rem;
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    .sm\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        height: 18rem;
+    }
+
+    #onecard{
+        width: 28rem;
+    }
+
+
+   .welcome{
+    text-align: center;
+    margin-top: 1rem;
+   }
+
+   .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    height: 18rem;
+    justify-items: center;
+}
+
+
+
+
+
+
+  }

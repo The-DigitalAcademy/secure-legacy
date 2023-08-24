@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
         snackBarRef.onAction().subscribe(() => {
           window.location.replace("/dashboard")
         });
-       
+        window.location.replace("/dashboard")
       //return this.isLoggedIn = true
       
         
@@ -71,6 +71,12 @@ export class LoginComponent implements OnInit {
         snackBarReffail.onAction().subscribe(() => {
           this.reloadPage()
         });
+
+        setTimeout(() => {
+          if (this.isLoginFailed) {
+            this.reloadPage()
+          }
+        }, 1500);
       },
       
    });
@@ -80,4 +86,5 @@ export class LoginComponent implements OnInit {
     window.location.reload();
   }
 
+  
 }

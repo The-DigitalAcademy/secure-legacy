@@ -72,7 +72,9 @@ export class RegisterComponent implements OnInit {
           });
           console.log(this.errorMessage)
           // window.location.reload()
+          
         },
+
       });
 
 

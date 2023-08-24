@@ -34,3 +34,72 @@
     font-weight: lighter;
   }
 }
+
+// Example media query for small screens
+@media (max-width: 640px) {
+
+}
+
+// Example media query for medium screens
+@media (min-width: 641px) and (max-width: 768px) {
+ 
+}
+
+// Example media query for large screens
+@media (min-width: 769px) {
+  .container form   input {
+    border-radius: 2rem;
+    color: black;
+    width: 35rem;
+    margin-left: 13rem;
+  }
+
+  form #btnsearch {
+    background-color: #ff5c53;
+    border-radius: 2rem;
+    margin-right: -36rem;
+  }
+
+  form #btnclose {
+   
+    border-radius: 2rem;
+    margin-right: -36rem;
+  }
+
+  .relative {
+    #seaIcon{
+      margin-right: -1rem;
+    }
+   
+  }
+
+  .relative {
+    position: relative;
+    margin-left: 8rem;
+}
+
+  .pl-3 {
+    padding-left: 14rem;
+}
+
+
+  .container  .explain {
+    margin-left: 23rem;
+    margin-right: 18rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    word-spacing: 2px;
+    font-weight: lighter;
+
+}
+
+.container   .text {
+  text-align: center;
+  margin-left: 5rem;
+  margin-right: 2rem;
+}
+
+}
+
+
+

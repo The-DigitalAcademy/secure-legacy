@@ -205,3 +205,69 @@
     margin-top: 10px;
     margin-left: 7rem;
   }
+
+  @media (min-width: 769px) {
+    :host {
+      ::ng-deep {
+        .questionForm form {
+          margin-top: 5rem;
+          border: solid 1px;
+          border-radius: 1rem;
+          text-align: center;
+          width: 25rem;
+          margin-left: 30rem;
+      }
+  
+      .btns button {
+        background-color: #ff5c53;
+        width: 5rem;
+        border-radius: 1rem;
+        color: white;
+        margin-left: -16rem;
+        margin-bottom: 1;
+        height: 2rem;
+    }
+  
+     .Complete-image img {
+      margin-left: 37rem;
+      width: 12rem;
+  }
+  
+  
+   .retake {
+      margin-left: 38rem;
+  }
+  
+  
+  
+  .complete-survey{
+    margin-left: 36rem;
+    background-color: #ff5c53;
+    border-radius: 1rem;
+    color: white;
+    width: 15rem;
+    height: 3rem;
+  }
+
+  .loader-container{
+    margin-top: 16rem;
+    margin-left: 43rem;
+    color: #ff5c53; 
+  }
+  
+  
+  .custom-loader {
+    color: #ff5c53; 
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    margin-left: 43rem;
+  }
+}
+  
+  
+        
+    }
+  }
