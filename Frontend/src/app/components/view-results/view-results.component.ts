@@ -13,6 +13,7 @@ export class ViewResultsComponent implements OnInit {
   sixthFormGroup = this._formBuilder.group({
     // sixthCtrl: ['', Validators.required],
   });
+  view = true;
   isLinear = true;
   hidden = true;
   select = false;
@@ -74,6 +75,18 @@ export class ViewResultsComponent implements OnInit {
         console.log(this.myCurrentAnswers);
         this.loading = false;
         this.loadingTimeout = false;
+
+        // Testing This If All User Answers Are False
+        if (
+          !this.userAnswers.has_dependents &&
+          !this.userAnswers.planning_for_child_education &&
+          !this.userAnswers.physically_demanding_job &&
+          !this.userAnswers.specific_financial_goals &&
+          !this.userAnswers.retirement_plan_with_tax_benefits
+        ) {
+          this.view = false; // Set view to false
+        }
+
         
       },
       (error) => {

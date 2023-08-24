@@ -34,4 +34,6 @@ export class DashboardComponent implements OnInit {
     this.childComponent.ViewProd();
   }
 
+
+
 }

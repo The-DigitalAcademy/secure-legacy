@@ -1,3 +1,4 @@
+// Import necessary modules and dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -10,7 +11,7 @@ const swaggerUi = require('swagger-ui-express');
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 
-// Swagger options
+// Configure Swagger documentation options
 const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
@@ -42,24 +43,26 @@ app.get('/api-docs.json', (req, res) => {
 // Serve Swagger UI
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.use(bodyParser.json());
-app.use(cors());
+// Configure middleware and application routes
+app.use(bodyParser.json()); // Parse JSON requests
+app.use(cors()); // Enable CORS
 
 // Import the recommendations controller
 const { getRecommendations, getMeaningOfWord } = require('./app/Controllers/gpt');
-// app.post('/api/products', getProducts);
-// API route for recommendations
-app.post('/api/recommendations', getRecommendations);
-// API Route For Meanings
-app.post('/api/meaning', getMeaningOfWord);
 
-// Routes
+// Define API routes for recommendations and meanings
+app.post('/api/recommendations', getRecommendations); // API route for recommendations
+app.post('/api/meaning', getMeaningOfWord); // API route for word meanings
+
+// Set up authentication routes
 app.use('/auth', authRouter);
 
+// Define a default route
 app.get('/', (req, res) => {
   res.json({ 'Project Name:': 'Secure Legacy' });
 });
 
+// Connect to the database and start the server
 (async () => {
   try {
     await sequelize.authenticate();
