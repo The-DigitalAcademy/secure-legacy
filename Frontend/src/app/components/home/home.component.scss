@@ -190,7 +190,39 @@ button{
 
 
       @media (max-width: 640px) {
-     
+        .carousel {
+          margin-left: 0.5rem;
+          
+        }
+
+        .w-1\/2 {
+          width: 60%;
+      }
+
+      .w-1\/2 {
+        width: 60%;
+    }
+
+    .text-3xl {
+      font-size: 1.4rem;
+      line-height: 2.25rem;
+  }
+
+  .mat-h2, .mat-title, .mat-typography .mat-h2, .mat-typography .mat-title, .mat-typography h2 {
+    font: 500 13px/0px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 0 0 16px;
+}
+
+    #sliides{
+      h2, p, button{
+        font: 500 13px/0px Roboto, "Helvetica Neue", sans-serif;
+      letter-spacing: normal;
+      margin: 0 0 16px;
+      }
+
+    } 
+
       }
       
       // Example media query for medium screens
@@ -200,5 +232,36 @@ button{
       
       // Example media query for large screens
       @media (min-width: 769px) {
-  
+        .carousel {
+          width: 90%;
+          overflow: hidden;
+          margin-left: 3rem;
+          
+        }
+        
+        .carousel-item {
+          display: none;
+        }
+        
+        .carousel-item.active {
+          display: block;
+        }
       }
+
+
+
+
+      .carousel {
+        width: 90%;
+        overflow: hidden;
+        
+      }
+      
+      .carousel-item {
+        display: none;
+      }
+      
+      .carousel-item.active {
+        display: block;
+      }
+

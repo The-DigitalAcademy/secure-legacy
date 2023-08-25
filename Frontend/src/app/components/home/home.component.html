@@ -1,47 +1,51 @@
 <app-navbar for="menu-toggle" class="hamburger-menu"></app-navbar>
 
+<div class="bg-white py-0 sm:py-0" style="width: 100%;">
+  <div class="mx-auto max-w-9xl">
+    <div class="mx-auto relative" style="height: 35rem;">
+      <!-- Tailwind CSS Carousel --><br><br>
+      <div class="carousel" style="display: flex;">
+        <!-- <h1>hi</h1> -->
+        <button (click)="previousSlide()" >
+          <img src="https://img.icons8.com/?size=90&id=Cz8juqGGkjSf&format=png">
+        </button>
+        <ng-container *ngFor="let slide of carouselSlides; let i = index">
+          <div class="carousel-item" [class.active]="i === activeSlideIndex">
+            <div class="flex items-center h-full">
+              <div class="w-1/2">
+                <img [src]="slide.image" alt="Slide {{ i + 1 }}" class="h-auto max-h-full mx-auto">
+              </div>
+              <div class="w-1/2 p-6" id="sliides">
+                <h2 class="text-base font-semibold leading-7 text-indigo-600">{{ slide.title }}</h2>
+                <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{ slide.subtitle }}</p>
+                <br>
+                <button style="background-color: #FF5C53; width: 100%; height: 2.5rem; font-size: 1rem; border-color: none; border: solid 1px; border-radius: 2rem; color: white;">{{ slide.description }} </button>
+                <!-- <p class="mt-6 text-lg leading-8 text-gray-600">{{ slide.description }}</p> -->
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <!-- <h1>hi</h1> -->
+        <button (click)="nextSlide()" class="" style="">
+       
+          <img src="https://img.icons8.com/?size=60&id=47FN3wCcByf1&format=png">
+        </button>
+      </div>
+      <br><br>
+      <!-- End Tailwind CSS Carousel -->
+      <!-- <button (click)="nextSlide()" class="absolute right-0 bottom-0 ">
+       
+        <img src="https://img.icons8.com/?size=60&id=47FN3wCcByf1&format=png">
+        
+      </button> -->
+      <!-- <br><br>
+      <button (click)="previousSlide()" >
+        <img src="https://img.icons8.com/?size=50&id=9438&format=png">
+      </button> -->
+        <div class="mx-auto text-center" style="background-color: #FF5C53; height: 100%;">
+             <div><br><br>
 
-<div class="rousel">
-<div id="controls-carousel" class="relative w-full" data-carousel="static">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-         <!-- Item 1 -->
-        <div class="ease-in-out" data-carousel-item="active">
-         <div class="itemss" routerLink="/getstarted">
-                <img src="https://ouch-cdn2.icons8.com/93j5jo8NI5fKk_BYSZCdfAkWBwzSK9hU4uNJ_-JEkJ8/rs:fit:256:384/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODUw/LzgxZTdiMDRmLWQy/Y2QtNDYwNS05NDI4/LTcwZGU4NTdlNTZl/OC5wbmc.png" alt="...">
-                <div class="cover-info">
-                    <h1>LEARN ABOUT INVESTMENTS</h1>
-                    
-                </div>
-        </div>
-        </div>
-        <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            
-        </div>
-        <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-        <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-        <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-    </div>
-    <div class="flex justify-center" id="reg-btn">
-        <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" routerLink="/getstarted">Get Started</button>
-    </div>
-</div>
-</div>
-
-<footer class="footer footer-center p-10 text-primary-content" >
-    <div>
-
-      <h3 class="subject">
+                <h3 class="subject">
         Become part of our learning community to connect with generational
         Wealth!
       </h3> 
@@ -53,6 +57,8 @@
           FORGET THE PAST. SECURE THE FUTURE
         </span>
       </div>
-      <br>
-
-  </footer>
+        </div>
+      
+    </div>
+  </div>
+  
