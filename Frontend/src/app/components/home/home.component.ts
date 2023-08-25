@@ -59,4 +59,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  getStarted(){
+    window.location.replace("/getstarted")
+  }
 }
