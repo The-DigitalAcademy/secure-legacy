@@ -71,12 +71,12 @@ cd secure-legacy
 Install the required dependencies for the frontend and backend:
 
 ```
-cd client
+cd Frontend
 npm install
 ```
 
 ```
-cd ../server
+cd Backend
 npm install
 ```
 
