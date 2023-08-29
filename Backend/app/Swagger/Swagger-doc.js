@@ -149,5 +149,149 @@
  *           type: string
  *         email:
  *           type: string
+ *         password:
+ *           type: string
+ *         confirmPassword:
+ *           type: string
  */
 
+
+/**
+ * @swagger
+ * tags:
+ *   name: Survey Questions
+ *   description: API for displaying Survey Questions to the client
+ */
+
+/**
+ * @swagger
+ * /api/survey:
+ *   post:
+ *     tags: [Survey Questions]
+ *     summary: Create a new survey.
+ *     description: Create a new survey with provided details.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               surveyQuestion:
+ *                 type: string
+ *               description:
+ *                 type: string
+ *               title:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Survey created successfully.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Survey'
+ *       409:
+ *         description: Details are not correct.
+ *       500:
+ *         description: Server error.
+ *
+ * /api/getallSurveys:
+ *   get:
+ *     tags: [Survey Questions]
+ *     summary: Get all surveys.
+ *     description: Retrieve a list of all surveys.
+ *     responses:
+ *       200:
+ *         description: List of surveys.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Survey'
+ *       404:
+ *         description: No surveys found.
+ *       500:
+ *         description: Server error.
+ *
+ * /api/survey/{id}:
+ *   put:
+ *     tags: [Survey Questions]
+ *     summary: Update a survey by ID.
+ *     description: Update a survey with provided details based on the ID.
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         description: Survey ID
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               surveyQuestion:
+ *                 type: string
+ *               description:
+ *                 type: string
+ *               title:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Survey updated successfully.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Survey'
+ *       404:
+ *         description: Survey not found.
+ *       500:
+ *         description: Server error.
+ *
+ * components:
+ *   schemas:
+ *     Survey:
+ *       type: object
+ *       properties:
+ *         userID:
+ *           type: integer
+ *         surveyQuestion:
+ *           type: string
+ *         title:
+ *           type: string
+ *         description:
+ *           type: string
+ */
+
+/**
+ * @swagger
+ * /api/survey/{id}:
+ *   delete:
+ *     tags: [Survey Questions]
+ *     summary: Delete a survey by ID.
+ *     description: Delete a survey based on the provided ID.
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         description: Survey ID
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: Survey deleted successfully.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Survey not found.
+ *       500:
+ *         description: Server error.
+ */

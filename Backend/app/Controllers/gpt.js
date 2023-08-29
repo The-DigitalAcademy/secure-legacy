@@ -1,15 +1,15 @@
 /**
  * @swagger
  * tags:
- *   name: Product Recommendations
- *   description: API for product recommendations with kid-friendly explanations
+ *   name: OPENAI Model
+ *   description: API for product recommendations with kid-friendly explanations & for searching the meaning of words one at a time using OPENAI
  */
 
 /**
  * @swagger
  * /api/recommendations:
  *   post:
- *     tags: [Product Recommendations]
+ *     tags: [OPENAI Model]
  *     summary: Get product recommendations with kid-friendly explanations based on user inputs.
  *     description: Retrieve product recommendations and explanations based on user answers.
  *     requestBody:
@@ -79,16 +79,9 @@ async function getRecommendations(req, res) {
 
 /**
  * @swagger
- * tags:
- *   name: Word Meaning Bonus
- *   description: API for searching the meaning of words one at a time using OPENAI.
- */
-
-/**
- * @swagger
  * /api/meaning:
  *   post:
- *     tags: [Word Meaning Bonus]
+ *     tags: [OPENAI Model]
  *     summary: Get kid-friendly explanation for a given word.
  *     description: Retrieve kid-friendly explanation for a provided word.
  *     requestBody:
@@ -144,5 +137,3 @@ module.exports = {
   getRecommendations,
   getMeaningOfWord
 };
-
-

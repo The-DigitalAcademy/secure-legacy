@@ -5,10 +5,12 @@ const cors = require('cors');
 const { authRouter } = require('./app/Routes/authRoutes');
 const sequelize = require('./app/Utils/database');
 const User = require('./app/Models/userModel');
+const Survey = require('./app/Models/surveyModel');
 const app = express();
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const path = require('path');
+const surveyRoutes = require('./app/Routes/surveyRoutes')
 const PORT = process.env.PORT || 3000;
 
 // Configure Swagger documentation options
@@ -16,9 +18,9 @@ const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Secure Legacy API',
+      title: 'Secure Legacy App API',
       version: '1.0.0',
-      description: 'API for Authentication And AI Recommendations',
+      description: 'API for recommending products with kid-friendly explanations',
     },
     servers: [
       {
@@ -28,8 +30,9 @@ const swaggerOptions = {
   },
   apis: [
     path.join(__dirname, './app/Controllers/gpt.js'),
-    path.join(__dirname, './app/GPTServices/openai.js'),
+    // path.join(__dirname, './app/GPTServices/openai.js'),
     path.join(__dirname, './app/Swagger/swagger-doc.js'),
+    // path.join(__dirname, './app/Routes/surveyRoutes.js'),
   ],
 };
 
@@ -57,6 +60,9 @@ app.post('/api/meaning', getMeaningOfWord); // API route for word meanings
 
 // Set up authentication routes
 app.use('/auth', authRouter);
+// Set up survey routes
+app.use('/api/survey', surveyRoutes)
+app.use('/api/getallSurveys', surveyRoutes)
 
 // Define a default route
 app.get('/', (req, res) => {
