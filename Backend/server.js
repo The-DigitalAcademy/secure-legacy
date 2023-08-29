@@ -31,8 +31,7 @@ const swaggerOptions = {
   apis: [
     path.join(__dirname, './app/Controllers/gpt.js'),
     // path.join(__dirname, './app/GPTServices/openai.js'),
-    path.join(__dirname, './app/Swagger/swagger-doc.js'),
-    // path.join(__dirname, './app/Routes/surveyRoutes.js'),
+    path.join(__dirname, './app/Swagger/Swagger-doc.js'),
   ],
 };
 
