@@ -59,6 +59,6 @@ Open your web browser and visit http://localhost:4200 to access Secure Legacy.
 
 Hosted Application
 ```
-Backend: https://secureserver-tbbl.onrender.com
+Backend: https://legacyserver.onrender.com/
 Frontend: https://secure-legacy-v1.vercel.app/home
 ```
