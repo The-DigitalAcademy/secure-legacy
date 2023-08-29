@@ -16,6 +16,42 @@ Secure Legacy Insurance Recommendations is a web application that leverages arti
 - PostgreSQL
 - Tailwind CSS
 
+## API Endpoints
+
+### Authentication
+```
+POST /auth/register: Register a new user
+POST /auth/login: Log in an existing user
+```
+
+###Recommendations
+```
+POST /api/recommendations: Get product recommendations with kid-friendly explanations based on user inputs.
+```
+
+### Word Meaning
+```
+POST /api/meaning: Get kid-friendly explanation for a given word.
+```
+
+### Dependencies
+```
+axios: ^1.4.0
+bcrypt: ^5.1.0
+body-parser: ^1.20.2
+cors: ^2.8.5
+dotenv: ^16.3.1
+express: ^4.18.2
+handlebars: ^4.7.8
+jsonwebtoken: ^9.0.1
+nodemailer: ^6.9.4
+pg: ^8.11.1
+pg-hstore: ^2.3.4
+sequelize: ^6.32.1
+swagger-jsdoc: ^6.2.8
+swagger-ui-express: ^5.0.0
+```
+
 ## Installation and Setup
 
 To install and run Secure Legacy Insurance Recommendations, follow these steps:
