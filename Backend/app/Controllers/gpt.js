@@ -1,7 +1,7 @@
 /**
  * @swagger
  * tags:
- *   name: Recommendations
+ *   name: Product Recommendations
  *   description: API for product recommendations with kid-friendly explanations
  */
 
@@ -9,7 +9,7 @@
  * @swagger
  * /api/recommendations:
  *   post:
- *     tags: [Recommendations]
+ *     tags: [Product Recommendations]
  *     summary: Get product recommendations with kid-friendly explanations based on user inputs.
  *     description: Retrieve product recommendations and explanations based on user answers.
  *     requestBody:
@@ -80,7 +80,7 @@ async function getRecommendations(req, res) {
 /**
  * @swagger
  * tags:
- *   name: Word Meaning
+ *   name: Word Meaning Bonus
  *   description: API for searching the meaning of words one at a time using OPENAI.
  */
 
@@ -88,7 +88,7 @@ async function getRecommendations(req, res) {
  * @swagger
  * /api/meaning:
  *   post:
- *     tags: [Word Meaning]
+ *     tags: [Word Meaning Bonus]
  *     summary: Get kid-friendly explanation for a given word.
  *     description: Retrieve kid-friendly explanation for a provided word.
  *     requestBody:

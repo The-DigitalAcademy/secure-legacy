@@ -16,9 +16,9 @@ const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Product Recommender API',
+      title: 'Secure Legacy API',
       version: '1.0.0',
-      description: 'API for recommending products with kid-friendly explanations',
+      description: 'API for Authentication And AI Recommendations',
     },
     servers: [
       {
@@ -29,6 +29,7 @@ const swaggerOptions = {
   apis: [
     path.join(__dirname, './app/Controllers/gpt.js'),
     path.join(__dirname, './app/GPTServices/openai.js'),
+    path.join(__dirname, './app/Swagger/swagger-doc.js'),
   ],
 };
 
