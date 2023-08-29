@@ -24,7 +24,7 @@ POST /auth/register: Register a new user
 POST /auth/login: Log in an existing user
 ```
 
-###Recommendations
+### Recommendations
 ```
 POST /api/recommendations: Get product recommendations with kid-friendly explanations based on user inputs.
 ```
