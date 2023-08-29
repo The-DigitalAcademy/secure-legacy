@@ -34,10 +34,17 @@
     margin-left: 3rem;
   }
 
-  .relative {
-    height: 110vh;
+  // .relative {
+  //   height: 102vh;
+  //   margin-top: -11rem;
+  //   box-shadow: none;
+  // }
+
+  .relative{
+    height: 103vh;
+    margin-top: -11rem;
     box-shadow: none;
-  }
+}
 
   #contain {
     height: 100vh;
@@ -78,6 +85,8 @@
   #small-sty {
     margin: 0%;
     padding: 0%;
+    margin-top: 5rem;
+    height: 100%;
   }
 
   #info-text h3 {
@@ -116,18 +125,9 @@
   #small-sty {
     margin-top: 5rem;
   }
-}
 
-.h-80 {
-  height: 12rem;
-}
 
-.relative[_ngcontent-umr-c52] {
-  height: 109vh;
-  box-shadow: none;
-}
-
-.circle-container {
+  .circle-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -140,7 +140,7 @@
   position: absolute;
   width: 230px;
   height: 230px;
-  background-color: #f0d1cf; /* Change the color as per your requirement */
+  background-color: #f0d1cf;
   border-radius: 50%;
 }
 
@@ -153,3 +153,45 @@
   bottom: -110px;
   left: -80px;
 }
+}
+
+.h-80 {
+  height: 12rem;
+}
+
+// .relative[_ngcontent-umr-c52] {
+//   height: 109vh;
+//   box-shadow: none;
+// }
+
+// .circle-container {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: -1;
+// }
+
+// .circle {
+//   position: absolute;
+//   width: 230px;
+//   height: 230px;
+//   background-color: #f0d1cf;
+//   border-radius: 50%;
+// }
+
+// .circle-top-right {
+//   top: -50px;
+//   right: -80px;
+// }
+
+// .circle-bottom-left {
+//   bottom: -110px;
+//   left: -80px;
+// }
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  /* CSS */
+} 

@@ -108,25 +108,11 @@
               placeholder="Password"
               class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               [(ngModel)]="form.password"
-              pattern="^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$"
               required
-              minlength="8"
               #password="ngModel"
             />
-            <div
-              class="alert alert-danger"
-              role="alert"
-              *ngIf="password.errors && f.submitted"
-            >
-              <div *ngIf="password.errors?.['required']">
-                Password is required
-              </div>
-              <div *ngIf="password.errors?.['minlength']">
-                Password must be at least 8 characters
-              </div>
-            </div>
-            <div class="alert" *ngIf="password.errors?.['pattern']">
-              Password must contain both letters and numbers
+            <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+              <div *ngIf="password.errors?.['required']">Password is required</div>
             </div>
           </div>
           <div>
@@ -141,23 +127,18 @@
               #confirmPassword="ngModel"
               placeholder="Confirm Password"
             />
-            <div
-              class="alert alert-danger"
-              role="alert"
-              *ngIf="confirmPassword.errors && f.submitted"
-            >
-              <div *ngIf="confirmPassword.errors?.['required']">
-                Password is required
-              </div>
-              <div *ngIf="confirmPassword.errors?.['minlength']">
-                Password must be at least 8 characters
-              </div>
+            <div class="alert alert-danger" role="alert" *ngIf="confirmPassword.errors && f.submitted">
+              <div *ngIf="confirmPassword.errors?.['required']">Password is required</div>
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="form.password !== form.confirmPassword && f.submitted">
+              Passwords do not match
             </div>
           </div>
 
           <div class="flex justify-center" id="reg-btn">
             <button
               type="submit"
+              
               class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               REGISTER
