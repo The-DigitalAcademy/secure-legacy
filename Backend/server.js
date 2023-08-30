@@ -13,6 +13,8 @@ const path = require('path');
 const surveyRoutes = require('./app/Routes/surveyRoutes')
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
+
 // Configure Swagger documentation options
 const swaggerOptions = {
   definition: {
@@ -24,7 +26,8 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: `http://localhost:${PORT}`,
+        url: `https://legacyserver.onrender.com/`,
+        // url: `http://localhost:${PORT}`,
       },
     ],
   },
