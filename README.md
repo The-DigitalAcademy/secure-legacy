@@ -19,22 +19,26 @@ Secure Legacy Insurance Recommendations is a web application that leverages arti
 ## API Endpoints
 
 ### Authentication
+
 ```
 POST /auth/register: Register a new user
 POST /auth/login: Log in an existing user
 ```
 
 ### Recommendations
+
 ```
 POST /api/recommendations: Get product recommendations with kid-friendly explanations based on user inputs.
 ```
 
 ### Word Meaning
+
 ```
 POST /api/meaning: Get kid-friendly explanation for a given word.
 ```
 
 ### Dependencies
+
 ```
 axios: ^1.4.0
 bcrypt: ^5.1.0
@@ -87,10 +91,13 @@ In the client directory, run the following command to start the frontend:
 ```
 ng serve
 ```
+
 In the server directory, run the following command to start the backend:
+
 ```
 npm start
 ```
+
 Open your web browser and visit http://localhost:4200 to access Secure Legacy.
 
 Hosted Application
